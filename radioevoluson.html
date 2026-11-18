@@ -1676,7 +1676,7 @@ body:has(.history-card){
       actualiser();
       setInterval(actualiser,1000);
     })();
-    const VOTE_API_BASE = "http://147.135.252.68:20011";
+    const VOTE_API_BASE = window.location.origin;
     // Agenda local alimenté par les agendas officiels via l’API du bot.
     (function(){
       const container=document.getElementById("localAgendaEvents");
@@ -1731,7 +1731,7 @@ body:has(.history-card){
     };
     function rankingRows(snapshot, period) {
       const raw = period === "weekly" ? (snapshot.hebdomadaire || []) : (snapshot.general || []);
-      // Le classement ne montre que les titres ayant réellement reçu au moins un vote.
+      // Le classement affiche les 20 premiers titres ayant réellement reçu au moins un vote.
       // Le catalogue complet reste visible séparément dans « Tous les titres à voter ».
       return raw.map(normalizeVoteItem).filter(item => item.title && (item.up > 0 || item.down > 0))
         .sort((a,b) => b.score-a.score || b.up-a.up).slice(0,20);
