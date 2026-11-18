@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a90008">
+  <title>Radio Evoluson — L’Essentiel du Rythme !</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline">
+    <strong>♪ L’Essentiel du Rythme !</strong>
+    <div class="top-links">
+      <span>Suivez Radio Evoluson :</span>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="YouTube">YouTube</a>
+      <span>Écoutez-nous partout : 📱</span>
+    </div>
+  </div>
+  <header class="masthead">
+    <div class="mast-inner">
+      <nav aria-label="Navigation principale">
+        <a class="active" href="#accueil">⌂ Accueil</a>
+        <div class="nav-dropdown">
+          <a class="nav-trigger radio-menu-trigger" href="#radio" data-view="radio-menu" aria-haspopup="true" aria-expanded="false">◉ Radio <span class="chevron">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="#classement" data-view="classement">🏆 Classement</a>
+            <a href="#votes" data-view="votes">🏆 Votes des auditeurs</a>
+            <a href="#dedicaces" data-view="dedicaces">💌 Dédicaces</a>
+            <a href="#agenda-radio" data-view="agenda-radio">📅 Agenda</a>
+            <a href="#radio" data-view="radio">♫ C’était quoi ce titre ?</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-trigger" href="#emissions" data-view="emissions" aria-haspopup="true" aria-expanded="false">♫ Émissions <span class="chevron">⌄</span></a>
+          <div class="dropdown-menu">
+            <a href="#emissions" data-view="emissions">Grille des programmes</a>
+            <a href="#emissions-live" data-view="emissions">Émission en cours</a>
+            <a href="#emissions-podcasts" data-view="emissions">Podcasts & réécoutes</a>
+          </div>
+        </div>
+        <a href="#actualites" data-view="actualites">▤ Actualités</a>
+        <a href="#meteo" data-view="meteo">☀ Météo</a>
+        <a href="#medias" data-view="medias">▷ Médias</a>
+        <a href="#contact" data-view="contact">✉ Contact</a>
+      </nav>
+    </div>
+  </header>
+  <section class="playerbar" id="radio" aria-label="Lecteur Radio Evoluson">
+    <div class="player-inner">
+      <div class="cover-vote-stack">
+        <img class="cover" id="trackCover" alt="Pochette du titre en cours" src="https://image.radioking.io/radios/511051/cover/api/7427d501-9add-4365-856b-f71a56a31753.jpg">
+        <div class="live-vote-widget" id="liveVoteWidget">
+          <button type="button" id="liveVoteButton" disabled>👍 Voter</button>
+        </div>
+      </div>
+      <div class="track">
+        <div class="artist" id="trackArtist">RADIO EVOLUSON</div>
+        <div class="title" id="trackTitle">L’Essentiel du Rythme !</div>
+        <div class="main-track-progress" aria-label="Progression du titre">
+          <div class="main-progress-meta"><span id="mainTrackElapsed">0:00</span><span id="mainTrackDuration">--:--</span></div>
+          <div class="main-progress-rail"><span id="mainTrackProgress"></span></div>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <button class="play" id="playButton" aria-label="Écouter la radio">▶</button>
+        <input class="volume" id="volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume">
+      </div>
+      <div class="live-label"><span class="live-dot"></span>EN DIRECT SUR <span style="color:var(--yellow)">RADIO EVOLUSON</span></div>
+      <a class="pause-cafe" id="currentShowButton" href="#emissions">☕ EN PAUSE CAFÉ EVOLUSON !</a>
+      <div class="radio-live-clock" aria-label="Horloge en temps réel">
+        <span class="radio-live-clock-label">🕒 HEURE ACTUELLE</span>
+        <strong id="radioLiveClock">--:--:--</strong>
+        <small id="radioLiveDate">Chargement…</small>
+      </div>
+      <audio id="radioAudio" class="hidden-audio" preload="none" src="https://listen.radioking.com/radio/511051/stream/568837"></audio>
+    </div>
+  </section>
+  <main id="accueil" class="site-view">
+    <section class="welcome-home" aria-label="Bienvenue">
+      <div class="welcome-home-inner">
+        <div class="welcome-kicker">RADIO EVOLUSON • L’ESSENTIEL DU RYTHME</div>
+        <h1>Bienvenue sur <span>Radio Evoluson</span> !</h1>
+        <p>Heureux de vous accueillir ! Retrouvez toute l’énergie de votre radio : musique, actualités, émissions, interviews, médias et rendez-vous près de chez vous.</p>
+        <div class="welcome-signature">Installez-vous, écoutez… vous êtes chez vous ! <span>🎶</span></div>
+      </div>
+    </section>
+
+    <div class="section-wrap">
+      <div class="content-grid">
+        
+      </div>
+    <section class="feature-strip" id="medias">
+        <div class="feature"><span class="ico">🎧</span><div><strong>Nos podcasts</strong><small>Réécoutez vos émissions préférées</small></div></div>
+        <div class="feature"><span class="ico">▶</span><div><strong>Nos émissions</strong><small>Le programme de la radio</small></div></div>
+        <div class="feature" id="agenda"><span class="ico">▦</span><div><strong>Agenda local</strong><small>Les événements près de chez vous</small></div></div>
+        <div class="feature" id="contact"><span class="ico">♧</span><div><strong>Participez</strong><small>Réagissez, proposez vos idées</small></div></div>
+      </section>
+    </div>
+  </main>
+  <main id="mediasView" class="site-view view-hidden">
+      <section class="hero">
+      <div class="hero-inner">
+        <div class="mic-art" aria-hidden="true">🎙️</div>
+        <div class="hero-copy">
+          <div class="eyebrow">Votre radio • Votre région • Votre musique</div>
+          <h1>Tout savoir sur votre ville<br>en un <span>clic !</span></h1>
+          <p>Actus locales&nbsp; • &nbsp;Émissions&nbsp; • &nbsp;Interviews&nbsp; • &nbsp;Agenda&nbsp; • &nbsp;Podcasts</p>
+          <a class="cta" href="#actualites" data-view="actualites">DÉCOUVREZ L’ACTU DE VOTRE RÉGION&nbsp; →</a>
+        </div>
+        <div class="hero-brand">
+          <img src="data:image/jpeg;base64,/9j/2wCEAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgoBAgICAgICBQMDBQoHBgcKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCv/AABEIAZABkAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP38ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKMgdTQAUUZHqKq6zrej+HtLuNb13Vbays7SIyXV3dzrFFCg6s7sQqgepIoAtUV8J+Of8Ag4D/AGJZP2rfBP7G37OerXHxS8XeMPGFpoct74akVdJ0vzZNssr3jDbOUQM2yEPkjBZeo+7AcikncAooopgFFFFABRRRQAUUUUAFFFFABRRRQAUU12IJAOMCgu2eBQFx1FNMg602acQoZZHVFHUswA/M0rjSbJKK5LXPjt8GPDErw+Jfi94X090OHS81+2jZfqGcGsJv2yP2UEfyn/aT8DBgcEf8JPbf/F1lLEUI/FNL5o7qOVZpiI3pUJyXlGT/ACR6VRXE6T+0j+z9r7quh/HHwfdlui2/iW1Yn8N+a66y1G11CJbmyuo54mGVkgcOpHqCDzVwqU5/C0/Q562FxOGdq0HH1TX5liimBzuIzz2FLvOeaswHUUA5GaKACiiigAoooOexoAKKTPbPNJuOenH0oAdRSbgTgGloAKKRmwMjmgMMZzQAtFIpyM0tABRRRQAUUUUAFFFFABRSHOfvfhWJ8QviT4B+EvhK88ffFDxtpXh7RNPiMl7q2tX8dtbQKBnLSSEKOh4zk0AbhIUZNZvinxh4W8D+H7rxZ4z8RWOk6VYxGW+1LU7tLe3t0HVnkchVHuTX5Oft9/8AB2H+zb8Ift3gL9hzwU/xO16MtGvijUxJZ6DA443J0mvOf7gRDj757/iz+2l/wUm/bS/b98QPqn7Tvxv1PWNPWYvZeF7RvsukWfPAjtIyEJH9997HH3qiVSMSlFs/cb9vv/g6m/ZA/Z/F74H/AGQ9Ck+LviiHdGNVhla10C1k9WuCN91g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cfGulaNZ/FjxbrN/rOp+G7mG0hiZb4o5ndRGQWljCkMc7xjNcj/wWH/4JZftuf8ABKv/AIKGal+2B+yH4Z8Uf8IfqPimXxN4H8Z+E7GSdtBuJnaWSynEat5exmdRuGx42HXkUAe4eKP+DNX/AIKBeO7yK88bft4eBdXmhi8uGbVG1S5eOMnJCmRWIGSTgcZr99/2TPgYf2ZP2Y/h9+zy2vtqreCPBum6G2pspX7U1tbpEZMHkBipIHYGv5wv2Sv+C1X/AAXw/bg/a1+E3wmHxB8Rto03j/SYfEC+GfASWsU1n9qj+0fa5Uh4jEW8tllFf0/rnHPrQAtFFFABRRRQAUUUUAFFFFACbR6n8zQFA5yfzpaKACoL/TbLU4fsuoWcU8R+9HNErqfwYEVPRQBDZWNrp8C21lbRwxKMLHEgVR+AAFRX+jafqRU39hbz7GDIZ4VfBHcZBxVuigBqptG3tiqzaLpr3i6k+nwNcoMJO0Klx/wLGR+dW6KADGKqX+i6Xqsax6pp8FyqtlVuIVkCn23A4q3RQBHbwLboIo0VUAwqqoAH4CpAAPX86KKAAgHr/OjAxiiigCrb6Rp9rdyX1vYwRzS/62WOFQzn3IGT+NWsDOefzoooAbJGJFII7fnVWw0LStLd5NO0y2t2kOXaC3VCx98AZq5RQAhAPXP50tFFAARmq1tpdnaTS3FtaxRyTHM0kcaq0h9WIGT+NWaKAEAx/wDrqG/02x1SD7LqFpFPGTkxzRK65+jAip6KAGRQRwoIo1CqowqqMAD8KeBjiiigAIzQBiiigDhP2nvHvir4V/s5ePvid4FtI7jWvDvgrVNU0mCZSySXFvaSSxqQOoLIOO9fyRf8FUv+C0/7UH/BZKH4b/D/AOIXw70rR4fCaOlronhcyzHWNVuAkb3JRssHYBUSJchdzYJzX9il1a297bvaXcCSRSIVkjkUMrKRggg8EEcYrxj4f/8ABN/9gn4VfFB/jV8OP2QPh7ovitn3jXdP8L28c8b5zvQhcRtk9VANAHkP/BBf9hbWP+CfX/BNLwJ8F/G2kiz8XanDJ4h8ZwFRvi1G8IcwsR1MUQhiPvGa+xp4UnjMciBlYYZWGQR6EU5UVM7e9LQBBYabY6XB9m0+0igjByI4Ygij8FAFTgAdP50UUAIQD1z+dBUH1/OlooAMcYoAA6fzoooAQKAc8/nTZoY5kMciBlYYZWGQR7in0UAVNO0PStIDjS9MtrbecsLeBUz9doGat0UUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB/9k=" alt="Radio Evoluson">
+        </div>
+      </div>
+    </section>
+
+  <div class="section-wrap">
+    <div class="content-grid">
+      <aside class="side">
+          <div class="listen-card" aria-label="Lecteur Radio Evoluson">
+            <img class="listen-cover" id="sideTrackCover" src="https://image.radioking.io/radios/511051/cover/api/7427d501-9add-4365-856b-f71a56a31753.jpg" alt="Pochette du titre en cours">
+            <div class="listen-track">
+              <span class="listen-station">◉ Écoutez Radio Evoluson</span>
+              <strong id="sideTrackTitle">Titre en cours…</strong>
+              <small id="sideTrackArtist">Artiste en cours…</small>
+            </div>
+            <button class="big-play" type="button" id="sidePlay" aria-label="Lancer la radio">▶</button>
+            <div class="side-track-progress" aria-label="Progression du titre">
+              <div class="side-progress-meta"><span id="sideTrackElapsed">0:00</span><span id="sideTrackDuration">--:--</span></div>
+              <div class="side-progress-rail"><span id="sideTrackProgress"></span></div>
+            </div>
+          </div>
+          <div class="schedule" id="emissions">
+            <h3>▦ Prochaines émissions</h3>
+            <div id="homeScheduleRows"><div class="schedule-row"><span class="ico">🎙️</span><span>Chargement du programme…</span><time>--:--</time></div></div>
+          </div>
+        </aside>
+    </div>
+  </div>
+</main>
+<main id="meteoView" class="site-view view-hidden">
+  <div class="section-wrap">
+    <section class="weather-home" aria-label="Météo locale">
+      <div class="weather-home-inner">
+        <div class="weather-heading">
+          <div class="eyebrow">RADIO EVOLUSON • LE TEMPS PRÈS DE CHEZ VOUS</div>
+          <h2>☀️ La météo de votre région</h2>
+          <p>Tain-l’Hermitage et la Vallée du Rhône, puis la météo près de vous.</p>
+        </div>
+        <div class="weather-grid">
+          <article class="weather-card">
+            <h3>📍 Tain-l’Hermitage</h3>
+            <div class="weather-subtitle">Conditions actuelles et prévisions locales</div>
+            <div id="weatherTain">
+              <div class="weather-main"><div class="weather-icon">🌤️</div><div><div class="weather-temp">--°</div><div class="weather-desc">Chargement de la météo…</div></div></div>
+            </div>
+            <div class="weather-days" id="weatherTainDays"></div>
+            <div class="weather-location" id="weatherTainUpdated">Données météo en cours de chargement</div>
+          </article>
+          <article class="weather-card">
+            <h3>🧭 Météo autour de vous</h3>
+            <div class="weather-subtitle">Localisation automatique avec votre autorisation</div>
+            <div class="weather-local-city" id="weatherLocalCity" style="font-weight:800;color:#78000b;margin:8px 0">📍 Recherche de votre ville…</div>
+            <div id="weatherLocal">
+              <div class="weather-main"><div class="weather-icon">📍</div><div><div class="weather-temp">--°</div><div class="weather-desc">Recherche de votre position…</div></div></div>
+            </div>
+            <div class="weather-days" id="weatherLocalDays"></div>
+            <button type="button" class="weather-button" id="weatherLocateButton">📍 Actualiser ma météo locale</button>
+            <div class="weather-mobile-manual" id="weatherMobileManual">
+              <label for="weatherCityInput">Ou indiquez votre ville :</label>
+              <div class="weather-city-entry">
+                <input id="weatherCityInput" type="text" placeholder="Ex. : Desvres, Dunkerque…" autocomplete="address-level2">
+                <button type="button" class="weather-button" id="weatherCityButton">Voir la météo</button>
+              </div>
+            </div>
+            <div class="weather-status" id="weatherLocalStatus">Votre navigateur vous demandera l’autorisation d’utiliser votre position.</div>
+          </article>
+        </div>
+        <article class="weather-card" style="margin-top:18px">
+          <h3>🌦️ La Vallée du Rhône</h3>
+          <div class="weather-subtitle">Un aperçu de la météo le long du Rhône</div>
+          <div class="weather-region-list" id="weatherRhône">
+            <div class="weather-region-city"><b>Vienne</b><span>…</span><small>Chargement</small></div>
+            <div class="weather-region-city"><b>Valence</b><span>…</span><small>Chargement</small></div>
+            <div class="weather-region-city"><b>Avignon</b><span>…</span><small>Chargement</small></div>
+          </div>
+        </article>
+        <div class="weather-location">Source météo : <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · Prévisions actualisées périodiquement.</div>
+      </div>
+    </section>
+  </div>
+</main>
+<main id="actualitesView" class="site-view view-hidden">
+  <div class="section-wrap">
+    <section id="actualites" class="regional-news-page">
+      <div class="regional-news-inner">
+        <div class="regional-news-heading">
+          <div>
+            <div class="regional-news-kicker">LE FIL LOCAL DE RADIO EVOLUSON</div>
+            <h2 id="regionalNewsTitle">Actu en région <span>en direct</span></h2>
+            <p>Les dernières informations près de chez vous et autour de Tain-l’Hermitage.</p>
+          </div>
+        </div>
+        <div class="regional-news-tabs" role="group" aria-label="Choisir le fil d’actualités">
+          <button type="button" class="regional-tab active" data-news-mode="tain">📍 Tain-l’Hermitage & vallée du Rhône</button>
+          <button type="button" class="regional-tab" data-news-mode="nearby">◎ Autour de moi</button>
+        </div>
+        <div class="regional-news-status" id="regionalNewsStatus" aria-live="polite">
+          Chargement des dernières actualités…
+        </div>
+        <div class="regional-news-grid" id="regionalNewsList">
+          <article class="regional-news-placeholder">Récupération des dernières informations locales…</article>
+        </div>
+        <div class="regional-news-footer">
+          <span id="regionalNewsUpdated">Mise à jour automatique toutes les 3 minutes</span>
+          <button type="button" id="regionalNewsRefresh">↻ Actualiser</button>
+        </div>
+        <p class="regional-news-note">Les articles sont publiés par leurs médias d’origine. La disponibilité et l’heure de mise à jour dépendent de leurs flux d’actualité.</p>
+      </div>
+        </section>
+  </div>
+</main>
+<main id="emissionsView" class="emissions-view site-view view-hidden">
+    <section class="emissions-hero" id="emissions-live">
+      <div class="emissions-hero-inner">
+        <div>
+          <div class="emissions-kicker">La programmation Radio Evoluson</div>
+          <h1>Des rendez-vous qui donnent<br>le rythme à <span>vos journées !</span></h1>
+          <p>La grille suit automatiquement l'heure et le jour de diffusion.</p>
+        </div>
+        <div class="onair-card">
+          <div class="onair-badge"><i></i> ÉMISSION EN COURS</div>
+          <h2 id="currentShowName">Synchronisation de la grille…</h2>
+          <p id="currentShowDescription">Mise à jour automatique selon les horaires de diffusion.</p>
+          <span class="onair-time" id="currentShowTime">--:-- — --:--</span>
+        </div>
+      </div>
+    </section>
+    <div class="emissions-layout" id="emissions-grille">
+      <section>
+        <div class="emissions-heading">
+          <div><h2>Grille des programmes</h2><p>Le programme en cours est automatiquement mis en évidence.</p></div>
+          <div class="live-clock" id="scheduleClock">Heure de Paris : --:--:--</div>
+        </div>
+        <div class="day-tabs" role="tablist" aria-label="Jours de la semaine">
+          <button data-day="1" role="tab">LUNDI</button><button data-day="2" role="tab">MARDI</button>
+          <button data-day="3" role="tab">MERCREDI</button><button data-day="4" role="tab">JEUDI</button>
+          <button data-day="5" role="tab">VENDREDI</button><button data-day="6" role="tab">SAMEDI</button>
+          <button data-day="0" role="tab">DIMANCHE</button>
+        </div>
+        <div class="emission-list" id="emissionList" aria-live="polite"></div>
+      </section>
+      <aside class="emissions-side">
+        <div class="emissions-listen radio-page-player" aria-label="Lecteur Radio Evoluson">
+          <div class="radio-page-player-head">
+            <img id="emissionsTrackCover" src="https://image.radioking.io/radios/511051/cover/api/7427d501-9add-4365-856b-f71a56a31753.jpg" alt="Pochette du titre en cours">
+            <div class="radio-page-player-info">
+              <span>◉ Écoutez Radio Evoluson</span>
+              <strong id="emissionsTrackTitle">Titre en cours…</strong>
+              <small id="emissionsTrackArtist">Artiste en cours…</small>
+            </div>
+            <button type="button" id="emissionsPlay" aria-label="Lancer la radio">▶</button>
+          </div>
+          <div class="radio-page-progress" aria-label="Progression du titre">
+            <div><span id="emissionsElapsed">0:00</span><span id="emissionsDuration">--:--</span></div>
+            <div class="radio-page-progress-rail"><span id="emissionsProgress"></span></div>
+          </div>
+        </div>
+        <div class="emissions-sidebox">
+          <h3>Les prochains rendez-vous</h3>
+          <div id="nextShows"><div class="next-program"><span>Chargement de la grille…</span></div></div>
+        </div>
+        <div class="emissions-podcast" id="emissions-podcasts">
+          <h3>🎧 Podcasts & réécoutes</h3>
+          <p>Retrouvez les émissions et les rendez-vous de Radio Evoluson. Les liens de réécoute pourront être ajoutés à cet espace.</p>
+          <a href="https://radioevoluson.fr/programmes" target="_blank" rel="noopener">VOIR LES PROGRAMMES ACTUELS</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <main id="classementView" class="ranking-view site-view view-hidden">
+    <section class="ranking-hero">
+      <div class="ranking-hero-inner">
+        <div>
+          <div class="ranking-kicker">Radio Evoluson • Vos titres préférés</div>
+          <h1>Le <span style="color:var(--yellow)">Classement</span></h1>
+          <p>Découvrez les titres qui ont reçu des votes de la communauté Evoluson.</p>
+        </div>
+        <div class="ranking-hero-mark" aria-hidden="true">🏆</div>
+      </div>
+    </section>
+    <section class="ranking-wrap">
+      <div class="ranking-demo-note"><strong>Classement réel :</strong> les scores du classement général proviennent des fichiers de votes Discord transmis. Le classement hebdomadaire nécessite un historique daté.</div>
+      <div id="rankingLockNotice" class="ranking-demo-note" hidden>
+        🔒 Les classements général et hebdomadaire seront dévoilés jeudi à 20 h (heure de Paris). Les votes continuent pendant ce temps !
+      </div>
+      <div id="rankingContent">
+      <div class="ranking-tabs" role="tablist" aria-label="Type de classement">
+        <button class="ranking-tab active" id="rankingGeneralTab" type="button" role="tab" aria-selected="true" data-ranking="general">🏆 Classement général</button>
+        <button class="ranking-tab" id="rankingWeeklyTab" type="button" role="tab" aria-selected="false" data-ranking="weekly">🔥 Cette semaine</button>
+      </div>
+      <div class="ranking-summary">
+        <strong id="rankingTitle">Top 20 • Classement général</strong>
+        <span id="rankingUpdated">Données de démonstration</span>
+      </div>
+      <div class="ranking-list" id="rankingList" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+  <main id="votesView" class="radio-view site-view view-hidden">
+    <section class="radio-hero">
+      <div class="radio-hero-inner">
+        <div>
+          <div class="radio-kicker">La communauté Evoluson</div>
+          <h1>🏆 Votes des <span>auditeurs</span></h1>
+          <p>Retrouvez le Top 10 de la semaine et l’historique des votes.</p>
+        </div>
+        <div class="radio-hero-mark" aria-hidden="true">♥</div>
+      </div>
+    </section>
+    <section class="radio-votes-panel" id="radioVotesPanel">
+      <div class="radio-votes-heading">
+        <div>
+          <span class="radio-votes-kicker">La communauté Evoluson</span>
+          <h2>🏆 Votes des auditeurs</h2>
+          <p>Les votes de la semaine sont comptabilisés jusqu’au jeudi à 20 h.</p>
+        </div>
+        <span class="radio-votes-refresh" id="radioVotesUpdated">Actualisation automatique</span>
+      </div>
+      <div class="radio-votes-columns">
+        <div class="radio-votes-ranking">
+          <h3>Top 10 de la semaine</h3>
+          <ol id="radioVotesTop10"><li class="radio-votes-empty">Chargement des votes…</li></ol>
+        </div>
+        <div class="radio-votes-history">
+          <h3>Historique des votes</h3>
+          <p class="radio-votes-total" id="radioVotesTotal">— votes cette semaine</p>
+          <div id="radioVotesHistory"><p class="radio-votes-empty">Chargement de l’historique…</p></div>
+          <small>Le bilan est enregistré chaque jeudi à 20 h (heure de Paris).</small>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main id="radioView" class="radio-view site-view view-hidden">
+    <section class="radio-hero">
+      <div class="radio-hero-inner">
+        <div>
+          <div class="radio-kicker">Radio Evoluson • L’Essentiel du Rythme</div>
+          <h1>C’était quoi<br><span>ce titre ?</span></h1>
+          <p>Retrouvez le morceau diffusé en ce moment et les derniers titres passés à l’antenne.</p>
+        </div>
+        <div class="radio-hero-mark" aria-hidden="true">♫</div>
+      </div>
+    </section>
+    <div class="radio-content">
+      <section>
+        <h2 class="radio-section-title">Le titre en cours</h2>
+        <article class="radio-current-card">
+          <img id="radioPageCover" class="radio-current-cover" alt="Pochette du titre en cours" src="https://image.radioking.io/radios/511051/cover/api/7427d501-9add-4365-856b-f71a56a31753.jpg">
+          <div class="radio-current-meta">
+            <span class="radio-live-pill"><i></i> EN DIRECT</span>
+            <h3 id="radioPageTitle">Chargement du titre…</h3>
+            <p id="radioPageArtist">Radio Evoluson</p>
+          </div>
+        </article>
+        <section class="radio-history-panel">
+          <h3>Historique des titres diffusés</h3>
+          <div class="history-filters" aria-label="Affichage de l’historique">
+            <span class="history-filter-static">Tout afficher</span>
+          </div>
+          <form class="history-search" id="historySearchForm">
+            <label>Date
+              <input type="date" id="historyDate" required>
+            </label>
+            <label>Heure
+              <input type="time" id="historyTime" required>
+            </label>
+            <button type="submit">Rechercher</button>
+          </form>
+          <p class="history-search-note" id="historySearchNote">Choisissez une date et une heure pour afficher uniquement les titres diffusés avant cet instant.</p>
+          <div id="rk-played-tracks-widget" data-id="radio-evoluson" data-count="30" data-date="1" data-buy="0"></div>
+        </section>
+      </section>
+      <aside class="radio-side">
+        <div class="radio-listen-card radio-page-player" aria-label="Lecteur Radio Evoluson">
+          <div class="radio-page-player-head">
+            <img id="radioPageTrackCover" src="https://image.radioking.io/radios/511051/cover/api/7427d501-9add-4365-856b-f71a56a31753.jpg" alt="Pochette du titre en cours">
+            <div class="radio-page-player-info">
+              <span>◉ Écoutez Radio Evoluson</span>
+              <strong id="radioPageTrackTitle">Titre en cours…</strong>
+              <small id="radioPageTrackArtist">Artiste en cours…</small>
+            </div>
+            <button type="button" id="radioPagePlay" aria-label="Lancer la radio">▶</button>
+          </div>
+          <div class="radio-page-progress" aria-label="Progression du titre">
+            <div><span id="radioPageElapsed">0:00</span><span id="radioPageDuration">--:--</span></div>
+            <div class="radio-page-progress-rail"><span id="radioPageProgress"></span></div>
+          </div>
+        </div>
+        <div class="radio-side-panel">
+          <h3>À propos du titrage</h3>
+          <p>Retrouvez le morceau actuellement diffusé ainsi que les titres qui ont rythmé les dernières heures sur Radio Evoluson.</p>
+        </div>
+        <div class="radio-help">
+          <h3>🎵 Un titre vous plaît ?</h3>
+          <p>Consultez l’historique pour retrouver son artiste et son nom, même après le changement de morceau.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <main id="agendaRadioView" class="contact-view site-view view-hidden">
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <span>RADIO EVOLUSON • VOTRE RÉGION • VOS SORTIES</span>
+        <h1>L’Agenda près de <b>Tain-l’Hermitage</b></h1>
+        <p>Les événements, sorties et rendez-vous autour de Tain, Tournon et des communes voisines.</p>
+      </div>
+    </section>
+    <section class="local-agenda-wrap">
+      <div class="local-agenda-intro">
+        <h2>📅 Les prochains rendez-vous</h2>
+        <p>Les 10 prochains événements annoncés dans le secteur. Les horaires et conditions peuvent évoluer : consultez la fiche officielle avant de vous déplacer.</p>
+      </div>
+      <div class="local-agenda-toolbar">
+        <span><i class="live-dot"></i> Événements actualisés automatiquement</span>
+        <button type="button" id="refreshLocalAgenda">↻ Actualiser</button>
+      </div>
+      <div class="local-agenda-grid" id="localAgendaEvents">
+        <p class="local-agenda-loading">Chargement des événements autour de Tain-l’Hermitage…</p>
+      </div>
+      <p class="local-agenda-updated" id="localAgendaUpdated"></p>
+      <div class="local-agenda-sources">
+        <h3>Retrouvez tous les événements et les mises à jour</h3>
+        <a href="https://www.ville-tain.fr/fr/agenda/" target="_blank" rel="noopener">Agenda officiel de la Ville de Tain-l’Hermitage ↗</a>
+        <a href="https://www.archeagglo.fr/agendarche/" target="_blank" rel="noopener">Agend’Arche – ARCHE Agglo ↗</a>
+        <a href="https://www.tournon-sur-rhone.fr/evenements/" target="_blank" rel="noopener">Agenda officiel de Tournon-sur-Rhône ↗</a>
+      </div>
+    </section>
+  </main>
+  <main id="dedicacesView" class="contact-view site-view view-hidden">
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <span>RADIO EVOLUSON • L’ESSENTIEL DU RYTHME</span>
+        <h1>Envoyez votre <b>dédicace</b></h1>
+        <p>Faites plaisir à vos proches en leur offrant un message à l’antenne !</p>
+      </div>
+    </section>
+    <section class="contact-card">
+      <h2>💌 Votre dédicace</h2>
+      <p class="contact-intro">Indiquez à qui vous souhaitez dédier votre message et écrivez quelques mots pour l’équipe de Radio Evoluson.</p>
+      <form id="radioDedicaceForm">
+        <div class="contact-fields">
+          <label>Votre nom<input name="name" type="text" maxlength="100" autocomplete="name" required placeholder="Votre nom"></label>
+          <label>Votre adresse e-mail<input name="email" type="email" maxlength="160" autocomplete="email" required placeholder="vous@exemple.fr"></label>
+          <label>À qui dédiez-vous ce message ?<input name="recipient" type="text" maxlength="120" required placeholder="Prénom ou nom du destinataire"></label>
+          <label>Chanson souhaitée (facultatif)<input name="song" type="text" maxlength="180" placeholder="Titre et artiste"></label>
+          <label class="contact-full">Votre dédicace<textarea name="message" rows="6" maxlength="1500" required placeholder="Écrivez votre dédicace…"></textarea></label>
+        </div>
+        <button class="contact-send" type="submit" id="dedicaceSendButton">💌 Envoyer ma dédicace</button>
+        <p id="dedicaceFormStatus" class="contact-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <main id="contactView" class="contact-view site-view view-hidden">
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <span>RADIO EVOLUSON • À VOTRE ÉCOUTE</span>
+        <h1>Contactez <b>Radio Evoluson</b></h1>
+        <p>Une question, une dédicace, une suggestion ? Écrivez-nous !</p>
+      </div>
+    </section>
+    <section class="contact-card">
+      <h2>✉ Envoyer un message</h2>
+      <p class="contact-intro">Remplissez le formulaire ci-dessous. Notre équipe vous répondra dès que possible.</p>
+      <form id="radioContactForm">
+        <div class="contact-fields">
+          <label>Nom et prénom<input name="name" type="text" maxlength="100" autocomplete="name" required placeholder="Votre nom"></label>
+          <label>Votre adresse e-mail<input name="email" type="email" maxlength="160" autocomplete="email" required placeholder="vous@exemple.fr"></label>
+          <label class="contact-full">Sujet<input name="subject" type="text" maxlength="150" required placeholder="Objet de votre message"></label>
+          <label class="contact-full">Votre message<textarea name="message" rows="7" maxlength="5000" required placeholder="Écrivez votre message ici…"></textarea></label>
+        </div>
+        <button class="contact-send" type="submit" id="contactSendButton">✉ Envoyer le message</button>
+        <p id="contactFormStatus" class="contact-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> <strong>Radio Evoluson</strong> — L’Essentiel du Rythme !</footer>
+  <script>
+    const radioDedicaceForm=document.getElementById("radioDedicaceForm");
+    if(radioDedicaceForm){
+      radioDedicaceForm.addEventListener("submit",async event=>{
+        event.preventDefault();
+        const button=document.getElementById("dedicaceSendButton");
+        const status=document.getElementById("dedicaceFormStatus");
+        const data=Object.fromEntries(new FormData(radioDedicaceForm).entries());
+        button.disabled=true;button.textContent="Envoi en cours…";status.textContent="";
+        try{
+          const response=await fetch(`${VOTE_API_BASE}/api/dedicaces`,{
+            method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)
+          });
+          const result=await response.json();
+          if(!response.ok||!result.ok)throw new Error(result.error||"L’envoi a échoué.");
+          radioDedicaceForm.reset();status.textContent="✓ Votre dédicace a bien été envoyée à Radio Evoluson. Merci !";status.style.color="#16733b";
+        }catch(error){status.textContent=error.message||"Impossible d’envoyer la dédicace pour le moment.";status.style.color="#b00020";}
+        finally{button.disabled=false;button.textContent="💌 Envoyer ma dédicace";}
+      });
+    }
+    const radioContactForm=document.getElementById("radioContactForm");
+    if(radioContactForm){
+      radioContactForm.addEventListener("submit",async event=>{
+        event.preventDefault();
+        const button=document.getElementById("contactSendButton");
+        const status=document.getElementById("contactFormStatus");
+        const data=Object.fromEntries(new FormData(radioContactForm).entries());
+        button.disabled=true;button.textContent="Envoi en cours…";
+        status.textContent="";
+        try{
+          const response=await fetch(`${VOTE_API_BASE}/api/contact`,{
+            method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)
+          });
+          const result=await response.json();
+          if(!response.ok||!result.ok)throw new Error(result.error||"L’envoi a échoué. Réessayez plus tard.");
+          radioContactForm.reset();
+          status.textContent="✓ Votre message a bien été envoyé à Radio Evoluson. Merci !";
+          status.style.color="#16733b";
+        }catch(error){
+          status.textContent=error.message||"Impossible d’envoyer le message pour le moment.";
+          status.style.color="#b00020";
+        }finally{button.disabled=false;button.textContent="✉ Envoyer le message";}
+      });
+    }
+    // Horloge en temps réel, réglée sur l’heure de Paris.
+    (function demarrerHorlogeRadio(){
+      const heure=document.getElementById("radioLiveClock");
+      const date=document.getElementById("radioLiveDate");
+      if(!heure||!date)return;
+      const formatterHeure=new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});
+      const formatterDate=new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"short",day:"2-digit",month:"short"});
+      function actualiser(){
+        const maintenant=new Date();
+        heure.textContent=formatterHeure.format(maintenant);
+        date.textContent=formatterDate.format(maintenant);
+      }
+      actualiser();
+      setInterval(actualiser,1000);
+    })();
+    const VOTE_API_BASE = "http://147.135.252.68:20011";
+    // Agenda local alimenté par les agendas officiels via l’API du bot.
+    (function(){
+      const container=document.getElementById("localAgendaEvents");
+      const updated=document.getElementById("localAgendaUpdated");
+      const button=document.getElementById("refreshLocalAgenda");
+      if(!container)return;
+      const escapeText=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+      async function chargerAgenda(){
+        if(button){button.disabled=true;button.textContent="Chargement…";}
+        container.innerHTML='<p class="local-agenda-loading">Recherche des prochains événements…</p>';
+        try{
+          const response=await fetch(`${VOTE_API_BASE}/api/agenda-local`,{cache:"no-store"});
+          if(!response.ok)throw new Error("Le service Agenda est momentanément indisponible.");
+          const data=await response.json();
+          if(!data.ok)throw new Error(data.error||"Impossible de charger les événements.");
+          const events=(Array.isArray(data.events)?data.events:[]).slice(0,10);
+          if(!events.length){
+            container.innerHTML='<p class="local-agenda-loading">Aucun événement à venir trouvé pour le moment. Consultez les agendas officiels ci-dessous.</p>';
+          }else{
+            container.innerHTML=events.map(event=>`<article class="local-event-card">
+              <span class="local-event-date">${escapeText(event.dateLabel||"Date à confirmer")}</span>
+              <h3>${escapeText(event.title)}</h3>
+              <p class="local-event-place">📍 ${escapeText(event.city||"Secteur Tain-l’Hermitage")}</p>
+              ${event.description?`<p>${escapeText(event.description)}</p>`:""}
+              ${event.url?`<a href="${escapeText(event.url)}" target="_blank" rel="noopener">Détails de l’événement ↗</a>`:""}
+              <small class="local-event-source">Source : ${escapeText(event.source||"Agenda local")}</small>
+            </article>`).join("");
+          }
+          if(updated)updated.textContent="Dernière actualisation : "+new Date(data.updatedAt||Date.now()).toLocaleString("fr-FR");
+        }catch(error){
+          container.innerHTML=`<p class="local-agenda-error">${escapeText(error.message)}<br>Les agendas officiels restent accessibles via les liens ci-dessous.</p>`;
+          if(updated)updated.textContent="Actualisation impossible";
+        }finally{
+          if(button){button.disabled=false;button.textContent="↻ Actualiser";}
+        }
+      }
+      if(button)button.addEventListener("click",chargerAgenda);
+      chargerAgenda();
+      setInterval(chargerAgenda,15*60*1000);
+    })();
+    // Classements et votes connectés au bot Radio Evoluson hébergé sur KataBump.
+    let rankingPeriod = "general";
+    let apiSnapshot = null;
+    const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    }[char]));
+    const normalizeVoteItem = item => {
+      const title = String(item.titre || item.title || "");
+      const up = Number(item.up ?? item.general?.up ?? 0);
+      const down = Number(item.down ?? item.general?.down ?? 0);
+      return { title, up, down, score: Number(item.scoreNet ?? item.score ?? up-down) };
+    };
+    function rankingRows(snapshot, period) {
+      const raw = period === "weekly" ? (snapshot.hebdomadaire || []) : (snapshot.general || []);
+      // Le classement ne montre que les titres ayant réellement reçu au moins un vote.
+      // Le catalogue complet reste visible séparément dans « Tous les titres à voter ».
+      return raw.map(normalizeVoteItem).filter(item => item.title && (item.up > 0 || item.down > 0))
+        .sort((a,b) => b.score-a.score || b.up-a.up).slice(0,20);
+    }
+    function classementDevoile() {
+      const parts = new Intl.DateTimeFormat("fr-FR", {
+        timeZone:"Europe/Paris", weekday:"short", hour:"2-digit", minute:"2-digit", hourCycle:"h23"
+      }).formatToParts(new Date());
+      const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+      return !(values.weekday === "jeu." && Number(values.hour) < 20);
+    }
+    function actualiserVerrouClassement() {
+      const ouvert = classementDevoile();
+      const content = document.getElementById("rankingContent");
+      const notice = document.getElementById("rankingLockNotice");
+      if (content) content.hidden = !ouvert;
+      if (notice) notice.hidden = ouvert;
+    }
+    const artworkCache = new Map();
+    let artworkCallbackId = 0;
+    const normaliserTextePochette = value => String(value || "")
+      .toLocaleLowerCase("fr").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+      .replace(/\([^)]*\)|\[[^\]]*\]/g," ").replace(/\b(19|20)\d{2}\b/g," ")
+      .replace(/[^\p{L}\p{N}]+/gu," ").trim();
+    function rechercheItunesPochette(terme) {
+      return new Promise(resolve => {
+        const callbackName = `radioArtworkCallback${++artworkCallbackId}`;
+        const script = document.createElement("script");
+        let finished = false;
+        const timer = setTimeout(() => finish(""), 9000);
+        function finish(url) {
+          if (finished) return;
+          finished = true;
+          clearTimeout(timer);
+          try { delete window[callbackName]; } catch (_) { window[callbackName] = undefined; }
+          script.remove();
+          resolve(url || "");
+        }
+        window[callbackName] = payload => {
+          const results = payload?.results || [];
+          const wanted = normaliserTextePochette(terme);
+          const tokens = wanted.split(" ").filter(word => word.length > 2);
+          let best = null, bestScore = 0;
+          for (const track of results) {
+            const candidate = normaliserTextePochette(`${track.artistName || ""} ${track.trackName || ""}`);
+            const score = tokens.reduce((sum, token) => sum + (candidate.includes(token) ? 1 : 0), 0);
+            if (score > bestScore) { bestScore = score; best = track; }
+          }
+          // Évite d'afficher la pochette d'un morceau sans rapport.
+          if (tokens.length && bestScore / tokens.length >= 0.45) {
+            finish(best?.artworkUrl100?.replace(/\/\d+x\d+bb\./,"/600x600bb.") || "");
+          } else finish("");
+        };
+        script.onerror = () => finish("");
+        script.src = `https://itunes.apple.com/search?term=${encodeURIComponent(terme)}&entity=song&limit=20&callback=${callbackName}`;
+        document.head.appendChild(script);
+      });
+    }
+    async function rechercherPochette(titre) {
+      if (artworkCache.has(titre)) return artworkCache.get(titre);
+      const propre = String(titre).replace(/\s*\((?:19|20)\d{2}\)\s*/g," ")
+        .replace(/\s*-\s*(?:radio edit|clean edit|remix|version).*$/i," ").trim();
+      const parties = propre.split(/\s+[–—-]\s+/);
+      const recherches = [...new Set([
+        propre,
+        parties.length > 1 ? `${parties[0]} ${parties.slice(1).join(" ")}` : "",
+        parties.length > 1 ? parties.slice(1).join(" ") : "",
+        propre.replace(/[^\p{L}\p{N}\s]/gu," ")
+      ].filter(q => q && q.length > 2))];
+      for (const terme of recherches) {
+        const url = await rechercheItunesPochette(terme);
+        if (url) { artworkCache.set(titre,url); return url; }
+      }
+      artworkCache.set(titre,"");
+      return "";
+    }
+    function chargerPochettesClassement() {
+      document.querySelectorAll(".ranking-cover[data-track]").forEach(async image => {
+        if (image.dataset.loaded === "1") return;
+        image.dataset.loaded = "1";
+        const titre = image.dataset.track;
+        const url = await rechercherPochette(titre);
+        if (url && image.isConnected) {
+          image.src = url;
+          image.alt = `Pochette de ${titre}`;
+          image.style.display = "block";
+        } else if (image.isConnected) {
+          image.dataset.loaded = "0";
+          image.alt = `Pochette indisponible pour ${titre}`;
+        }
+      });
+    }
+    function renderApiRanking() {
+      actualiserVerrouClassement();
+      const list = document.getElementById("rankingList");
+      if (!list || !apiSnapshot) return;
+      const data = rankingRows(apiSnapshot, rankingPeriod);
+      document.getElementById("rankingTitle").textContent =
+        rankingPeriod === "general" ? "Top 20 • Classement général" : "Top 20 • Classement de la semaine";
+      document.getElementById("rankingUpdated").textContent = "Mis à jour automatiquement";
+      if (!data.length) {
+        list.innerHTML = '<div class="ranking-empty">Aucun vote enregistré pour cette période pour le moment.</div>';
+        return;
+      }
+      list.innerHTML = data.map((item,index) => `
+        <article class="ranking-item">
+          <div class="ranking-rank ${index<3?'top':''}">${index===0?'👑':index===1?'🥈':index===2?'🥉':'#'+(index+1)}</div>
+          <div class="ranking-cover-wrap"><img class="ranking-cover" data-track="${escapeHtml(item.title)}" alt="Pochette en recherche" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23650008'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='48' fill='white'%3E%E2%99%AB%3C/text%3E%3C/svg%3E"></div>
+          <div class="ranking-track"><strong>${escapeHtml(item.title)}</strong><span>Radio Evoluson</span></div>
+          <div class="ranking-score">${item.score} pts<small>👍 ${item.up} · 👎 ${item.down}</small></div>
+        </article>`).join("");
+      chargerPochettesClassement();
+    }
+    let liveVoteTrack = "";
+    function currentRadioVoteTitle() {
+      const artist = document.getElementById("trackArtist")?.textContent?.trim() || "";
+      const title = document.getElementById("trackTitle")?.textContent?.trim() || "";
+      if (!title || title === "L’Essentiel du Rythme !" || title === "Titre en cours…") return "";
+      return artist && artist !== "RADIO EVOLUSON" ? `${artist} - ${title}` : title;
+    }
+    function findCurrentVoteCounts(snapshot, title) {
+      const items = snapshot?.titres || [];
+      const clean = value => String(value || "").toLocaleLowerCase("fr").replace(/[–—]/g,"-").replace(/\s+/g," ").trim();
+      const wanted = clean(title);
+      let item = items.find(entry => clean(entry.titre) === wanted);
+      if (!item) item = items.find(entry => clean(entry.titre).replace(/[-–—]/g," ").includes(wanted.replace(/[-–—]/g," ")));
+      const counts = item?.general || {};
+      return {up:Number(counts.up||0), down:Number(counts.down||0)};
+    }
+    function renderLiveVote() {
+      const title = currentRadioVoteTitle();
+      liveVoteTrack = title;
+      const button = document.getElementById("liveVoteButton");
+      if (button) button.disabled = !title;
+    }
+    function renderRadioVotes(snapshot){
+      const rows=(snapshot.hebdomadaire||[]).map(normalizeVoteItem)
+        .filter(item=>item.title&&(item.up>0||item.down>0))
+        .sort((a,b)=>b.score-a.score||b.up-a.up).slice(0,10);
+      const list=document.getElementById("radioVotesTop10");
+      if(list)list.innerHTML=rows.length?rows.map(item=>`<li><span class="radio-vote-title">${escapeHtml(item.title)}</span><span class="radio-vote-count">👍 ${item.up} · 👎 ${item.down}</span></li>`).join(""):'<li class="radio-votes-empty">Aucun vote enregistré cette semaine.</li>';
+      const total=(snapshot.titres||[]).reduce((sum,item)=>sum+Number(item.hebdomadaire?.up||0)+Number(item.hebdomadaire?.down||0),0);
+      const totalEl=document.getElementById("radioVotesTotal");
+      if(totalEl)totalEl.textContent=`${total} votes cette semaine`;
+      const updated=document.getElementById("radioVotesUpdated");
+      if(updated)updated.textContent="Mis à jour : "+new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
+      const history=document.getElementById("radioVotesHistory");
+      if(history){
+        const archives=snapshot.historiqueVotes||[];
+        history.innerHTML=archives.length?archives.slice(0,12).map(item=>`<div class="radio-vote-week"><span>Semaine du ${escapeHtml(item.date||"—")}</span><strong>${Number(item.total||0)} votes</strong></div>`).join(""):'<p class="radio-votes-empty">L’historique apparaîtra après le premier bilan du jeudi à 20 h.</p>';
+      }
+    }
+    async function loadRadioVoteHistory(){
+      try{
+        const response=await fetch(`${VOTE_API_BASE}/api/historique-votes`,{cache:"no-store"});
+        if(!response.ok)throw new Error("Historique indisponible");
+        const data=await response.json();
+        if(data.ok){
+          const history=document.getElementById("radioVotesHistory");
+          if(history)history.innerHTML=(data.historique||[]).length?(data.historique||[]).slice(0,12).map(item=>`<div class="radio-vote-week"><span>Semaine du ${escapeHtml(item.date||"—")}</span><strong>${Number(item.total||0)} votes</strong></div>`).join(""):'<p class="radio-votes-empty">L’historique apparaîtra après le premier bilan du jeudi à 20 h.</p>';
+        }
+      }catch(e){console.warn("Historique hebdomadaire non disponible :",e);}
+    }
+    async function loadVoteData() {
+      try {
+        const response = await fetch(`${VOTE_API_BASE}/api/classements`, {cache:"no-store"});
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        if (!data.ok) throw new Error("Réponse API invalide");
+        apiSnapshot = data;
+        renderRadioVotes(data);
+        loadRadioVoteHistory();
+        renderApiRanking();
+        renderLiveVote();
+      } catch (error) {
+        console.error("API votes indisponible :", error);
+        const list = document.getElementById("rankingList");
+        const message = '<div class="ranking-empty">Impossible de joindre le serveur de votes. Vérifiez la connexion HTTP/CORS à l’API KataBump.</div>';
+        if (list) list.innerHTML = message;
+        document.getElementById("rankingUpdated").textContent = "Connexion au serveur impossible";
+      }
+    }
+    document.querySelectorAll(".ranking-tab").forEach(btn => btn.addEventListener("click",()=>{
+      rankingPeriod = btn.dataset.ranking;
+      document.querySelectorAll(".ranking-tab").forEach(tab=>{
+        const active = tab.dataset.ranking === rankingPeriod;
+        tab.classList.toggle("active",active);
+        tab.setAttribute("aria-selected",active?"true":"false");
+      });
+      renderApiRanking();
+    }));
+    document.getElementById("liveVoteButton")?.addEventListener("click", () => {
+      const title = currentRadioVoteTitle();
+      const button = document.getElementById("liveVoteButton");
+      if (!title || !button) return;
+      // Accusé visuel immédiat : l'envoi au serveur démarre sans attendre un rechargement du classement.
+      button.textContent = "👍 Vote envoyé !";
+      fetch(`${VOTE_API_BASE}/api/vote`, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({titre:title,type:"up"})
+      }).then(async response => {
+        const result = await response.json();
+        if (!response.ok || !result.ok) throw new Error(result.erreur || `HTTP ${response.status}`);
+        loadVoteData();
+      }).catch(error => {
+        console.error("Échec du vote :", error);
+        button.textContent = "↻ Réessayer";
+      });
+    });
+    document.getElementById("liveVoteButton")?.addEventListener("mouseleave", () => {
+      const button = document.getElementById("liveVoteButton");
+      if (button && button.textContent !== "↻ Réessayer") button.textContent = "👍 Voter";
+    });
+    actualiserVerrouClassement();
+    setInterval(actualiserVerrouClassement, 15000);
+    loadVoteData();
+    setInterval(loadVoteData, 60000);
+    setInterval(loadVoteData, 15000);
+    // Met à jour l’onglet actif pour les rubriques de la page d’accueil.
+    document.querySelectorAll('nav > a[href^="#"]').forEach(link=>{
+      if(link.matches('[data-view]') || link.getAttribute("href")==="#accueil") return;
+      link.addEventListener("click",event=>{
+        // Ces rubriques changent uniquement l’onglet actif : aucun défilement automatique.
+        event.preventDefault();
+        document.querySelectorAll('nav a').forEach(item=>item.classList.remove("active"));
+        link.classList.add("active");
+        history.replaceState(null,"",link.getAttribute("href"));
+      });
+    });
+    function showSiteView(view, hashTarget){
+      const views = {
+        home: document.getElementById("accueil"),
+        medias: document.getElementById("mediasView"),
+        actualites: document.getElementById("actualitesView"),
+        meteo: document.getElementById("meteoView"),
+        radio: document.getElementById("radioView"),
+        votes: document.getElementById("votesView"),
+        classement: document.getElementById("classementView"),
+        emissions: document.getElementById("emissionsView"),
+        contact: document.getElementById("contactView"),
+        dedicaces: document.getElementById("dedicacesView"),
+        "agenda-radio": document.getElementById("agendaRadioView")
+      };
+      Object.entries(views).forEach(([name, element])=>{
+        if(element) element.classList.toggle("view-hidden",name!==view);
+      });
+      document.querySelectorAll('nav a').forEach(a=>a.classList.remove("active"));
+      const active = view==="emissions" ? document.querySelector('nav .nav-dropdown > .nav-trigger[data-view="emissions"]')
+        : view==="actualites" ? document.querySelector('nav a[data-view="actualites"]')
+        : view==="meteo" ? document.querySelector('nav a[data-view="meteo"]')
+        : view==="medias" ? document.querySelector('nav a[data-view="medias"]')
+        : view==="radio" ? document.querySelector('nav a[data-view="radio"]')
+        : view==="votes" ? document.querySelector('nav a[data-view="votes"]')
+        : view==="contact" ? document.querySelector('nav a[data-view="contact"]')
+        : view==="dedicaces" ? document.querySelector('nav a[data-view="dedicaces"]')
+        : view==="agenda-radio" ? document.querySelector('nav a[data-view="agenda-radio"]')
+        : view==="classement" ? document.querySelector('nav a[data-view="classement"]')
+        : document.querySelector('nav a[href="#accueil"]');
+      if(active) active.classList.add("active");
+      document.querySelectorAll(".nav-dropdown").forEach(d=>d.classList.remove("open"));
+      document.querySelectorAll(".nav-trigger").forEach(t=>t.setAttribute("aria-expanded","false"));
+      history.replaceState(null,"",view==="home"?"#accueil":view==="actualites"?"#actualites":view==="meteo"?"#meteo":view==="medias"?"#medias":view==="radio"?"#radio":view==="votes"?"#votes":view==="contact"?"#contact":view==="classement"?"#classement":"#emissions");
+      if(view==="emissions"){
+        if(hashTarget==="emissions-live") document.getElementById("emissions-live").scrollIntoView({behavior:"smooth"});
+        else if(hashTarget==="emissions-podcasts") document.getElementById("emissions-podcasts").scrollIntoView({behavior:"smooth"});
+        else window.scrollTo({top:0,behavior:"smooth"});
+        updateSchedule();
+      }else{
+        window.scrollTo({top:0,behavior:"smooth"});
+        if(view==="actualites" && typeof loadRegionalNewsNow==="function") loadRegionalNewsNow();
+        if(view==="radio"){
+          updateRadioPageTrack();
+          loadPlayedTracksWidget();
+        }
+        if(view==="home"){
+          if(hashTarget) setTimeout(()=>document.querySelector(hashTarget)?.scrollIntoView({behavior:"smooth"}),40);
+        }
+      }
+    }
+    document.querySelectorAll('[data-view="meteo"]').forEach(link=>{
+      link.addEventListener("click",event=>{
+        event.preventDefault();
+        showSiteView("meteo");
+      });
+    });
+    document.querySelectorAll('[data-view="medias"]').forEach(link=>{
+      link.addEventListener("click",event=>{
+        event.preventDefault();
+        showSiteView("medias");
+      });
+    });
+    document.querySelectorAll('[data-view="actualites"]').forEach(link=>{
+      link.addEventListener("click",event=>{
+        event.preventDefault();
+        showSiteView("actualites");
+      });
+    });
+    document.querySelectorAll('nav a[data-view="classement"]').forEach(link=>{
+      link.addEventListener("click",event=>{event.preventDefault();showSiteView("classement");});
+    });
+    document.querySelectorAll('nav a[data-view="radio"]').forEach(link=>{
+      link.addEventListener("click",event=>{event.preventDefault();showSiteView("radio");});
+    });
+    document.querySelectorAll('nav a[data-view="agenda-radio"]').forEach(link=>{
+      link.addEventListener("click",event=>{event.preventDefault();showSiteView("agenda-radio");});
+    });
+    document.querySelectorAll('nav a[data-view="dedicaces"]').forEach(link=>{
+      link.addEventListener("click",event=>{event.preventDefault();showSiteView("dedicaces");});
+    });
+    document.querySelectorAll('nav a[data-view="contact"]').forEach(link=>{
+      link.addEventListener("click",event=>{event.preventDefault();showSiteView("contact");});
+    });
+    document.querySelectorAll('nav a[data-view="votes"]').forEach(link=>{
+      link.addEventListener("click",event=>{
+        event.preventDefault();
+        showSiteView("votes");
+        loadVoteData();
+      });
+    });
+    document.querySelectorAll('[data-view="emissions"]').forEach(link=>{
+      link.addEventListener("click",event=>{
+        event.preventDefault();
+        showSiteView("emissions",link.getAttribute("href").slice(1));
+      });
+    });
+    document.querySelectorAll(".dropdown-menu a").forEach(item=>{
+      item.addEventListener("click",()=>{
+        const dropdown=item.closest(".nav-dropdown");
+        if(dropdown){
+          dropdown.classList.remove("open");
+          dropdown.querySelector(".nav-trigger")?.setAttribute("aria-expanded","false");
+          if(document.activeElement && dropdown.contains(document.activeElement)) document.activeElement.blur();
+          item.blur();
+        }
+      });
+    });
+    document.querySelectorAll('nav a[href^="#"]').forEach(link=>{
+      if(link.dataset.view) return;
+      link.addEventListener("click",event=>{
+        const target=link.getAttribute("href");
+        if(target==="#accueil"){event.preventDefault();showSiteView("home");}
+        else if(!document.getElementById("emissionsView").classList.contains("view-hidden") ||
+                !document.getElementById("radioView").classList.contains("view-hidden")){
+          event.preventDefault();showSiteView("home",target);
+        }
+      });
+    });
+    document.addEventListener("click",event=>{
+      if(!event.target.closest(".nav-dropdown")){
+        document.querySelectorAll(".nav-dropdown.open").forEach(item=>{
+          item.classList.remove("open");
+          item.querySelector(".nav-trigger")?.setAttribute("aria-expanded","false");
+        });
+      }
+    });
+    document.querySelectorAll(".nav-dropdown > .nav-trigger").forEach(trigger=>{
+      trigger.addEventListener("click",event=>{
+        // Sur écran tactile, le bouton du menu sert uniquement à ouvrir/fermer
+        // le sous-menu : empêcher le lien #radio/#emissions de faire défiler la page.
+        if(window.matchMedia("(hover: none), (max-width: 700px)").matches){
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const dropdown=trigger.parentElement;
+          const willOpen=!dropdown.classList.contains("open");
+          document.querySelectorAll(".nav-dropdown.open").forEach(item=>{
+            item.classList.remove("open");
+            item.querySelector(".nav-trigger")?.setAttribute("aria-expanded","false");
+          });
+          dropdown.classList.toggle("open",willOpen);
+          trigger.setAttribute("aria-expanded",willOpen?"true":"false");
+        }
+      });
+    });
+    const STREAM_URL = "https://listen.radioking.com/radio/511051/stream/568837";
+    const TRACK_API = "https://api.radioking.io/widget/radio/radio-evoluson/track/current";
+    const audio = document.getElementById("radioAudio");
+    const playButton = document.getElementById("playButton");
+    const sidePlay = document.getElementById("sidePlay");
+    const statusLine = document.getElementById("trackStatus");
+    const cover = document.getElementById("trackCover");
+    audio.src = STREAM_URL;
+    audio.volume = Number(document.getElementById("volume").value);
+    document.getElementById("volume").addEventListener("input", e => audio.volume = Number(e.target.value));
+    async function toggleRadio(){
+      if(audio.paused){
+        try{
+          await audio.play();
+          playButton.textContent = "Ⅱ";
+          playButton.setAttribute("aria-label","Mettre la radio en pause");
+          sidePlay.textContent = "Ⅱ";
+          const radioPagePlay=document.getElementById("radioPagePlay");if(radioPagePlay)radioPagePlay.textContent="Ⅱ";
+          statusLine.textContent = "Lecture en direct";
+        }catch(error){
+          statusLine.textContent = "Lecture impossible pour le moment : vérifiez votre connexion.";
+        }
+      }else{
+        audio.pause();
+        playButton.textContent = "▶";
+        playButton.setAttribute("aria-label","Écouter la radio");
+        sidePlay.textContent = "▶";
+        const radioPagePlay=document.getElementById("radioPagePlay");if(radioPagePlay)radioPagePlay.textContent="▶";
+        statusLine.textContent = "Radio en pause";
+      }
+    }
+    playButton.addEventListener("click",toggleRadio);
+    sidePlay.addEventListener("click",e=>{e.preventDefault();toggleRadio();});
+    document.getElementById("radioPagePlay")?.addEventListener("click",toggleRadio);
+    document.getElementById("emissionsPlay")?.addEventListener("click",toggleRadio);
+    audio.addEventListener("playing",()=>{playButton.textContent="Ⅱ";sidePlay.textContent="Ⅱ";const b=document.getElementById("radioPagePlay");if(b)b.textContent="Ⅱ";const e=document.getElementById("emissionsPlay");if(e)e.textContent="Ⅱ";});
+    audio.addEventListener("pause",()=>{playButton.textContent="▶";sidePlay.textContent="▶";const b=document.getElementById("radioPagePlay");if(b)b.textContent="▶";const e=document.getElementById("emissionsPlay");if(e)e.textContent="▶";});
+    let sideTrackDurationSeconds=0;
+    let sideTrackElapsedSeconds=0;
+    let sideTrackLastSync=Date.now();
+    let sideTrackKey="";
+    // Mémorise les titres déjà quittés pour ignorer les réponses API en retard
+    // qui renverraient momentanément l'ancien morceau.
+    const previousTrackKeys=new Set();
+    let pendingTrackKey="";
+    let pendingTrackCount=0;
+    let trackRequestSequence=0;
+    function formatTrackTime(seconds){
+      if(!Number.isFinite(seconds)||seconds<0)return "--:--";
+      const value=Math.floor(seconds);
+      return Math.floor(value/60)+":"+String(value%60).padStart(2,"0");
+    }
+    function renderSideTrackProgress(){
+      const elapsedNode=document.getElementById("sideTrackElapsed");
+      const durationNode=document.getElementById("sideTrackDuration");
+      const bar=document.getElementById("sideTrackProgress");
+      if(!elapsedNode||!durationNode||!bar)return;
+      const elapsed=Math.min(sideTrackElapsedSeconds,sideTrackDurationSeconds||sideTrackElapsedSeconds);
+      elapsedNode.textContent=formatTrackTime(elapsed);
+      durationNode.textContent=sideTrackDurationSeconds?formatTrackTime(sideTrackDurationSeconds):"--:--";
+      bar.style.width=sideTrackDurationSeconds?Math.min(100,elapsed/sideTrackDurationSeconds*100)+"%":"0%";
+      const mainElapsed=document.getElementById("mainTrackElapsed");
+      const mainDuration=document.getElementById("mainTrackDuration");
+      const mainBar=document.getElementById("mainTrackProgress");
+      if(mainElapsed) mainElapsed.textContent=formatTrackTime(elapsed);
+      if(mainDuration) mainDuration.textContent=sideTrackDurationSeconds?formatTrackTime(sideTrackDurationSeconds):"--:--";
+      if(mainBar) mainBar.style.width=sideTrackDurationSeconds?Math.min(100,elapsed/sideTrackDurationSeconds*100)+"%":"0%";
+      const pageElapsed=document.getElementById("radioPageElapsed");
+      const pageDuration=document.getElementById("radioPageDuration");
+      const pageBar=document.getElementById("radioPageProgress");
+      if(pageElapsed) pageElapsed.textContent=formatTrackTime(elapsed);
+      if(pageDuration) pageDuration.textContent=sideTrackDurationSeconds?formatTrackTime(sideTrackDurationSeconds):"--:--";
+      if(pageBar) pageBar.style.width=sideTrackDurationSeconds?Math.min(100,elapsed/sideTrackDurationSeconds*100)+"%":"0%";
+      const emissionElapsed=document.getElementById("emissionsElapsed");
+      const emissionDuration=document.getElementById("emissionsDuration");
+      const emissionBar=document.getElementById("emissionsProgress");
+      if(emissionElapsed) emissionElapsed.textContent=formatTrackTime(elapsed);
+      if(emissionDuration) emissionDuration.textContent=sideTrackDurationSeconds?formatTrackTime(sideTrackDurationSeconds):"--:--";
+      if(emissionBar) emissionBar.style.width=sideTrackDurationSeconds?Math.min(100,elapsed/sideTrackDurationSeconds*100)+"%":"0%";
+    }
+    setInterval(()=>{
+      if(sideTrackDurationSeconds && sideTrackElapsedSeconds<sideTrackDurationSeconds){
+        sideTrackElapsedSeconds=Math.min(sideTrackDurationSeconds,sideTrackElapsedSeconds+(Date.now()-sideTrackLastSync)/1000);
+        sideTrackLastSync=Date.now();
+        renderSideTrackProgress();
+      }
+    },1000);
+    async function updateCurrentTrack(){
+      const requestId=++trackRequestSequence;
+      try{
+        const response = await fetch(TRACK_API+"?v="+Date.now(),{cache:"no-store"});
+        if(!response.ok) throw new Error("API indisponible");
+        const data = await response.json();
+        if(requestId!==trackRequestSequence) return; // ignore une réponse arrivée en retard
+        const artist = data.artist || "Radio Evoluson";
+        const title = data.title || "L’Essentiel du Rythme !";
+        const newTrackKey=artist+" — "+title;
+        const rawStartCandidate=data.start_time ?? data.started_at ?? data.startTime ?? null;
+        const startSignature=rawStartCandidate==null?"":String(rawStartCandidate);
+        if(!sideTrackKey){
+          sideTrackKey=newTrackKey;
+          pendingTrackKey="";
+          pendingTrackCount=0;
+          sideTrackElapsedSeconds=0;
+          sideTrackDurationSeconds=0;
+          sideTrackLastSync=Date.now();
+        }else if(newTrackKey!==sideTrackKey){
+          if(previousTrackKeys.has(newTrackKey)){
+            // L'API a renvoyé un ancien titre : on conserve le titre plus récent affiché.
+            return;
+          }
+          if(pendingTrackKey!==newTrackKey){
+            pendingTrackKey=newTrackKey;
+            pendingTrackCount=1;
+            return;
+          }
+          pendingTrackCount++;
+          if(pendingTrackCount<2) return;
+          if(sideTrackKey) previousTrackKeys.add(sideTrackKey);
+          sideTrackKey=newTrackKey;
+          pendingTrackKey="";
+          pendingTrackCount=0;
+          sideTrackElapsedSeconds=0;
+          sideTrackDurationSeconds=0;
+          sideTrackLastSync=Date.now();
+        }else{
+          pendingTrackKey="";
+          pendingTrackCount=0;
+        }
+        const rawDuration=Number(data.duration ?? data.track_duration ?? data.length ?? 0);
+        if(Number.isFinite(rawDuration)&&rawDuration>0){
+          sideTrackDurationSeconds=rawDuration>10000?rawDuration/1000:rawDuration;
+        }
+        const rawStart=data.start_time ?? data.started_at ?? data.startTime ?? null;
+        if(rawStart && sideTrackDurationSeconds){
+          let startMs=typeof rawStart==="number"?(rawStart<1e12?rawStart*1000:rawStart):Date.parse(rawStart);
+          if(Number.isFinite(startMs)) sideTrackElapsedSeconds=Math.max(0,Math.min(sideTrackDurationSeconds,(Date.now()-startMs)/1000));
+        }
+        sideTrackLastSync=Date.now();
+        renderSideTrackProgress();
+        document.getElementById("trackArtist").textContent = artist;
+        document.getElementById("trackTitle").textContent = title;
+        const sideTitle=document.getElementById("sideTrackTitle");
+        const sideArtist=document.getElementById("sideTrackArtist");
+        const sideCover=document.getElementById("sideTrackCover");
+        if(sideTitle) sideTitle.textContent=title;
+        if(sideArtist) sideArtist.textContent=artist;
+        const pageTitle=document.getElementById("radioPageTrackTitle");
+        const pageArtist=document.getElementById("radioPageTrackArtist");
+        const pageCover=document.getElementById("radioPageTrackCover");
+        if(pageTitle) pageTitle.textContent=title;
+        if(pageArtist) pageArtist.textContent=artist;
+        const emissionTitle=document.getElementById("emissionsTrackTitle");
+        const emissionArtist=document.getElementById("emissionsTrackArtist");
+        const emissionCover=document.getElementById("emissionsTrackCover");
+        if(emissionTitle) emissionTitle.textContent=title;
+        if(emissionArtist) emissionArtist.textContent=artist;
+        if(data.cover && emissionCover && emissionCover.getAttribute("src")!==data.cover) emissionCover.src=data.cover;
+        if(data.cover && pageCover && pageCover.getAttribute("src")!==data.cover) pageCover.src=data.cover;
+        if(data.cover && cover.getAttribute("src") !== data.cover) cover.src = data.cover;
+        if(data.cover && sideCover && sideCover.getAttribute("src")!==data.cover) sideCover.src=data.cover;
+        statusLine.textContent = data.is_live ? "Émission en direct" : "Titre en cours de diffusion";
+        renderLiveVote();
+      }catch(error){
+        statusLine.textContent = "Les informations du titre ne sont pas disponibles pour le moment.";
+        console.warn("RadioKing API :",error);
+      }
+    }
+    cover.addEventListener("error",()=>{cover.src="";cover.style.background="#4a1115";});
+    updateCurrentTrack();
+    // Vérifie très fréquemment le titre en cours. L’API ne proposant pas ici de push temps réel,
+    // le navigateur interroge le serveur toutes les 2 secondes.
+    setInterval(updateCurrentTrack,2000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) updateCurrentTrack();
+    });
+    let playedTracksWidgetLoaded = false;
+    async function updateRadioPageTrack(){
+      try{
+        const response=await fetch(TRACK_API,{cache:"no-store"});
+        if(!response.ok) throw new Error("API indisponible");
+        const data=await response.json();
+        const title=data.title||"Titre non communiqué";
+        const artist=data.artist||"Artiste non communiqué";
+        const titleNode=document.getElementById("radioPageTitle");
+        const artistNode=document.getElementById("radioPageArtist");
+        const coverNode=document.getElementById("radioPageCover");
+        if(titleNode) titleNode.textContent=title;
+        if(artistNode) artistNode.textContent=artist;
+        if(coverNode && data.cover && coverNode.src!==data.cover) coverNode.src=data.cover;
+      }catch(error){
+        const updated=document.getElementById("radioPageUpdated");
+        if(updated) updated.textContent="Informations momentanément indisponibles.";
+      }
+    }
+    function loadPlayedTracksWidget(){
+      if(playedTracksWidgetLoaded) return;
+      playedTracksWidgetLoaded=true;
+      const widgetScript=document.createElement("script");
+      widgetScript.src="https://widget.radioking.io/played-tracks/build/script.min.js";
+      widgetScript.async=false;
+      widgetScript.onerror=()=>{
+        const target=document.getElementById("rk-played-tracks-widget");
+        if(target) target.innerHTML='<p>Impossible de charger l’historique RadioKing pour le moment. Réessayez dans quelques instants.</p>';
+        playedTracksWidgetLoaded=false;
+      };
+      document.body.appendChild(widgetScript);
+      const target=document.getElementById("rk-played-tracks-widget");
+      if(target) target.querySelectorAll(".history-loading").forEach(node=>node.remove());
+    }
+    function setupCustomHistorySearch(){
+      const form=document.getElementById("historySearchForm");
+      const dateInput=document.getElementById("historyDate");
+      const timeInput=document.getElementById("historyTime");
+      const widget=document.getElementById("rk-played-tracks-widget");
+      const note=document.getElementById("historySearchNote");
+      if(!form || !dateInput || !timeInput || !widget) return;
+      const now=new Date();
+      const localDate=new Date(now.getTime()-now.getTimezoneOffset()*60000).toISOString().slice(0,10);
+      const currentTime=()=>new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit",hour12:false});
+      dateInput.value=localDate;
+      timeInput.value=currentTime();
+      let timeWasEdited=false;
+      timeInput.addEventListener("input",()=>{timeWasEdited=true;});
+      // Actualise l’heure en temps réel tant que l’utilisateur ne l’a pas modifiée.
+      setInterval(()=>{
+        if(!timeWasEdited && dateInput.value===localDate) timeInput.value=currentTime();
+      },1000);
+      const parseChosen=()=>new Date(dateInput.value+"T"+timeInput.value+":00");
+      const parseRowDate=(text)=>{
+        const t=text.replace(/\s+/g," ").trim();
+        let m=t.match(/(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{4}).*?(\d{1,2}):(\d{2})/);
+        if(m) return new Date(Number(m[3]),Number(m[2])-1,Number(m[1]),Number(m[4]),Number(m[5]));
+        m=t.match(/(Aujourd’hui|Aujourd'hui|Today).*?(\d{1,2}):(\d{2})/i);
+        if(m) {
+          const d=new Date(dateInput.value+"T00:00:00");
+          d.setHours(Number(m[2]),Number(m[3]),0,0);
+          return d;
+        }
+        m=t.match(/(Hier|Yesterday).*?(\d{1,2}):(\d{2})/i);
+        if(m) {
+          const d=new Date(dateInput.value+"T00:00:00");
+          d.setDate(d.getDate()-1);
+          d.setHours(Number(m[2]),Number(m[3]),0,0);
+          return d;
+        }
+        return null;
+      };
+      const filterBeforeChosen=()=>{
+        const chosen=parseChosen();
+        if(Number.isNaN(chosen.getTime())) return;
+        const timePattern=/(?:Aujourd’hui|Aujourd'hui|Today|Hier|Yesterday|\d{1,2}[\/.-]\d{1,2}[\/.-]\d{4}).*?\d{1,2}:\d{2}/i;
+        const rows=[];
+        // Chaque pochette sert de repère : on remonte jusqu'au plus petit bloc
+        // contenant à la fois la pochette et son horodatage.
+        widget.querySelectorAll("img").forEach(img=>{
+          let node=img.parentElement;
+          let row=null;
+          while(node && node!==widget){
+            const text=(node.innerText||node.textContent||"").replace(/\s+/g," ").trim();
+            if(timePattern.test(text) && text.length<650){row=node;break;}
+            node=node.parentElement;
+          }
+          if(row && !rows.includes(row)) rows.push(row);
+        });
+        let hidden=0, parsed=0;
+        rows.forEach(row=>{
+          const stamp=parseRowDate(row.innerText||row.textContent||"");
+          if(!stamp) return;
+          parsed++;
+          const before=stamp.getTime()<=chosen.getTime();
+          row.style.display=before?"":"none";
+          if(!before) hidden++;
+        });
+        if(note) {
+          note.textContent=parsed
+            ? "Titres affichés jusqu’au "+chosen.toLocaleDateString("fr-FR")+" à "+timeInput.value+" (aucun titre postérieur)."
+            : "En attente des horaires des titres pour appliquer le filtre…";
+        }
+      };
+      const applySearch=()=>{
+        const nativeDate=widget.querySelector('input[type="date"]');
+        const nativeTime=widget.querySelector('input[type="time"]');
+        if(nativeDate){nativeDate.value=dateInput.value;nativeDate.dispatchEvent(new Event("input",{bubbles:true}));nativeDate.dispatchEvent(new Event("change",{bubbles:true}));}
+        if(nativeTime){nativeTime.value=timeInput.value;nativeTime.dispatchEvent(new Event("input",{bubbles:true}));nativeTime.dispatchEvent(new Event("change",{bubbles:true}));}
+        const searchButton=[...widget.querySelectorAll("button,input[type=button],input[type=submit]")].find(b=>/rechercher|search/i.test((b.innerText||b.value||b.textContent||"").trim()));
+        if(searchButton) searchButton.click();
+        setTimeout(filterBeforeChosen,500);
+        setTimeout(filterBeforeChosen,1300);
+      };
+      form.addEventListener("submit",event=>{event.preventDefault();applySearch();});
+      // Observe uniquement les nouveaux éléments de l’historique :
+      // ne jamais relancer la recherche depuis cet observateur (cela provoquait
+      // une boucle de mises à jour et un clignotement de la page).
+      let filterTimer=null;
+      const historyObserver=new MutationObserver(()=>{
+        clearTimeout(filterTimer);
+        filterTimer=setTimeout(filterBeforeChosen,180);
+      });
+      historyObserver.observe(widget,{childList:true,subtree:true});
+      // Synchronise une seule fois les contrôles RadioKing lorsqu’ils apparaissent.
+      const waitForControls=new MutationObserver(()=>{
+        if(widget.querySelector('input[type="date"]') && widget.querySelector('input[type="time"]')){
+          waitForControls.disconnect();
+          applySearch();
+        }
+      });
+      waitForControls.observe(widget,{childList:true,subtree:true});
+      // Au cas où le widget aurait déjà terminé son chargement.
+      if(widget.querySelector('input[type="date"]') && widget.querySelector('input[type="time"]')){
+        waitForControls.disconnect();
+        applySearch();
+      }
+    }
+    setupCustomHistorySearch();
+    document.getElementById("radioPagePlay")?.addEventListener("click",()=>{
+      toggleRadio();
+      document.getElementById("radioPagePlay").textContent=audio.paused?"▶ ÉCOUTER EN DIRECT":"Ⅱ RADIO EN COURS";
+    });
+    // Précharge le script d’historique en arrière-plan pour accélérer son affichage.
+    loadPlayedTracksWidget();
+    setInterval(()=>{
+      if(!document.getElementById("radioView").classList.contains("view-hidden")) updateRadioPageTrack();
+    },5000);
+    // Grille hebdomadaire Radio Evoluson publiée sur la page Programmes.
+    // Les horaires sont interprétés dans le fuseau Europe/Paris.
+    const WEEKLY_SCHEDULE = {
+      1: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["06:00","10:00","C'EST LE MORNING !","L'essentiel de l'actu, météo, éphéméride, sports et bons plans","Matin"],
+        ["10:00","12:00","En pause café EVOLUSON !","Votre rendez-vous convivial du matin","En direct"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["17:00","20:00","L'After-Work","Avec Rachel","After-work"],
+        ["20:00","24:00","La Playlist' EVOLUSON","Le meilleur des tubes","Soirée"]
+      ],
+      2: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["06:00","10:00","C'EST LE MORNING !","L'essentiel de l'actu, météo, éphéméride, sports et bons plans","Matin"],
+        ["10:00","12:00","En pause café EVOLUSON !","Votre rendez-vous convivial du matin","En direct"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["17:00","20:00","L'After-Work","Avec Rachel","After-work"],
+        ["20:00","24:00","La Playlist' EVOLUSON","Le meilleur des tubes","Soirée"]
+      ],
+      3: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["06:00","10:00","C'EST LE MORNING !","L'essentiel de l'actu, météo, éphéméride, sports et bons plans","Matin"],
+        ["10:00","12:00","En pause café EVOLUSON !","Votre rendez-vous convivial du matin","En direct"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["17:00","20:00","L'After-Work","Avec Rachel","After-work"],
+        ["20:00","24:00","La Playlist' EVOLUSON","Le meilleur des tubes","Soirée"]
+      ],
+      4: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["06:00","10:00","C'EST LE MORNING !","L'essentiel de l'actu, météo, éphéméride, sports et bons plans","Matin"],
+        ["10:00","12:00","En pause café EVOLUSON !","Votre rendez-vous convivial du matin","En direct"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["17:00","20:00","L'After-Work","Avec Rachel","After-work"],
+        ["20:00","24:00","La Playlist' EVOLUSON","Le meilleur des tubes","Soirée"]
+      ],
+      5: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["17:00","20:00","L'After-Work","Avec Rachel","After-work"],
+        ["20:00","22:00","Le 100% Vinyl !","Avec CPHIL","Vinyles"]
+      ],
+      6: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["17:00","20:00","L'After-Work","Avec Rachel","After-work"],
+        ["20:00","24:00","La Playlist' EVOLUSON","Le meilleur des tubes","Soirée"]
+      ],
+      0: [
+        ["00:00","06:00","Le 100% Hits et Nouveautés EVOLUSON !","La sélection musicale de la nuit","Musique"],
+        ["06:00","12:00","L'Essentiel Infos/Tubes","Actu, météo, bons plans, horoscope et loisirs","Matin"],
+        ["12:00","14:00","Le 12/14 EVOLUSON !","Infos, zoom local, cadeaux, chroniques et meilleurs tubes","Midi"],
+        ["14:00","17:00","Les Aprèm' EVOLUSON","Avec Séb","Après-midi"],
+        ["16:00","18:00","Le Top Hits Evoluson","Avec Florian","Top Hits"],
+        ["17:00","24:00","La Playlist' EVOLUSON","Le meilleur des tubes","Soirée"]
+      ]
+    };
+    const dayNames = {0:"Dimanche",1:"Lundi",2:"Mardi",3:"Mercredi",4:"Jeudi",5:"Vendredi",6:"Samedi"};
+    let selectedScheduleDay = null;
+    const parisParts = date => {
+      const p = new Intl.DateTimeFormat("fr-FR",{timeZone:"Europe/Paris",weekday:"long",hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}).formatToParts(date);
+      const get = type => p.find(x=>x.type===type)?.value;
+      const weekday = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"].indexOf(get("weekday"));
+      return {day:weekday,hour:Number(get("hour")),minute:Number(get("minute")),second:Number(get("second"))};
+    };
+    const toMinutes = hhmm => {const [h,m]=hhmm.split(":").map(Number);return h*60+m;};
+    const getDayShows = day => WEEKLY_SCHEDULE[day] || [];
+    function findCurrentShow(nowParts){
+      const minute=nowParts.hour*60+nowParts.minute;
+      const shows=getDayShows(nowParts.day);
+      // En cas de chevauchement dans la grille publiée, le créneau ayant commencé le plus récemment prévaut.
+      const active=shows.filter(s=>minute>=toMinutes(s[0]) && minute<toMinutes(s[1])).sort((a,b)=>toMinutes(b[0])-toMinutes(a[0]));
+      if(active.length) return active[0];
+      return ["00:00","24:00","Programmation musicale","Sélection musicale Radio Evoluson","Musique"];
+    }
+    function getUpcomingShows(nowParts){
+      const minute=nowParts.hour*60+nowParts.minute;
+      return getDayShows(nowParts.day).filter(s=>toMinutes(s[0])>minute).slice(0,3);
+    }
+    let lastRenderedScheduleKey = "";
+    function renderScheduleDay(day, nowParts){
+      const list=document.getElementById("emissionList");
+      if(!list) return;
+      // L'horloge se rafraîchit chaque seconde, mais la grille ne se reconstruit
+      // qu'au changement de minute/jour : cela évite le clignotement des cartes.
+      const renderKey = `${day}-${day===nowParts.day ? nowParts.hour*60+nowParts.minute : "static"}`;
+      if(renderKey === lastRenderedScheduleKey) return;
+      lastRenderedScheduleKey = renderKey;
+      const shows=getDayShows(day);
+      const isToday=day===nowParts.day;
+      const current=isToday?findCurrentShow(nowParts):null;
+      const next=isToday?getUpcomingShows(nowParts)[0]:null;
+      list.innerHTML="";
+      shows.forEach((s,index)=>{
+        const isCurrent=isToday && s===current;
+        const isNext=isToday && s===next;
+        const card=document.createElement("article");
+        card.className="emission-card"+(isCurrent?" current":"");
+        card.style.animationDelay=(index*45)+"ms";
+        const status=isCurrent?'<span class="emission-state">● EN COURS</span>':isNext?'<span class="emission-state next">À SUIVRE</span>':'';
+        card.innerHTML=`<div class="emission-time"><strong>${s[0]} – ${s[1]==="24:00"?"00:00":s[1]}</strong><small>${s[4]}</small></div><div class="emission-info"><span class="emission-tag">${dayNames[day]} • RADIO EVOLUSON</span><h3>${s[2]}</h3><p>${s[3]}</p></div>${status}`;
+        list.appendChild(card);
+      });
+      document.querySelectorAll(".day-tabs button").forEach(btn=>{
+        const active=Number(btn.dataset.day)===day;
+        btn.classList.toggle("active",active);
+        btn.classList.toggle("today",Number(btn.dataset.day)===nowParts.day);
+        btn.setAttribute("aria-selected",active?"true":"false");
+      });
+    }
+    function updateSchedule(){
+      const now=new Date(), parts=parisParts(now);
+      const clock=document.getElementById("scheduleClock");
+      if(clock) clock.textContent=`Heure de Paris : ${String(parts.hour).padStart(2,"0")}:${String(parts.minute).padStart(2,"0")}:${String(parts.second).padStart(2,"0")}`;
+      const todayShow=findCurrentShow(parts);
+      const currentShowButton=document.getElementById("currentShowButton");
+      if(currentShowButton){
+        const showName=todayShow[2] || "Radio Evoluson";
+        currentShowButton.textContent="☕ "+showName.toLocaleUpperCase("fr-FR")+" !";
+        currentShowButton.href="#emissions-live";
+        currentShowButton.setAttribute("aria-label","Voir l’émission en cours : "+showName);
+        currentShowButton.title="Émission en cours : "+showName;
+      }
+      const currentName=document.getElementById("currentShowName");
+      if(currentName){
+        currentName.textContent=todayShow[2];
+        document.getElementById("currentShowDescription").textContent=todayShow[3];
+        document.getElementById("currentShowTime").textContent=`${todayShow[0]} — ${todayShow[1]==="24:00"?"00:00":todayShow[1]}`;
+      }
+      const upcoming=getUpcomingShows(parts);
+      const nextBox=document.getElementById("nextShows");
+      if(nextBox){
+        nextBox.innerHTML="";
+        upcoming.forEach(s=>{
+          const row=document.createElement("div");row.className="next-program";
+          row.innerHTML=`<span>${s[2]}</span><time>${s[0]}</time>`;
+          nextBox.appendChild(row);
+        });
+        if(!upcoming.length) nextBox.innerHTML='<div class="next-program"><span>Fin de la programmation du jour</span><time>—</time></div>';
+      }
+      const homeRows=document.getElementById("homeScheduleRows");
+      if(homeRows){
+        homeRows.innerHTML="";
+        [todayShow,...upcoming.slice(0,2)].forEach((s,i)=>{
+          const row=document.createElement("div");row.className="schedule-row";
+          row.innerHTML=`<span class="ico">${i===0?"🔴":"🎙️"}</span><span>${s[2]}</span><time>${i===0?"En cours":s[0]}</time>`;
+          homeRows.appendChild(row);
+        });
+      }
+      if(selectedScheduleDay===null) selectedScheduleDay=parts.day;
+      renderScheduleDay(selectedScheduleDay,parts);
+    }
+    document.querySelectorAll(".day-tabs button").forEach(btn=>btn.addEventListener("click",()=>{
+      const p=parisParts(new Date());selectedScheduleDay=Number(btn.dataset.day);renderScheduleDay(selectedScheduleDay,p);
+    }));
+    document.getElementById("emissionsPlay")?.addEventListener("click",toggleRadio);
+    updateSchedule();
+    setInterval(updateSchedule,1000);
+    if(location.hash.startsWith("#emissions")) showSiteView("emissions",location.hash.slice(1));
+    else if(location.hash==="#radio") showSiteView("radio");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    // Fil d’actualités locales : flux RSS publics relayés pour permettre leur lecture dans le navigateur.
+    (function(){
+      const list=document.getElementById("regionalNewsList");
+      const status=document.getElementById("regionalNewsStatus");
+      const updated=document.getElementById("regionalNewsUpdated");
+      const refresh=document.getElementById("regionalNewsRefresh");
+      const tabs=[...document.querySelectorAll("[data-news-mode]")];
+      if(!list || !status) return;
+      let mode="tain", busy=false;
+      // Conversion RSS vers JSON via RSS2JSON, afin de contourner les restrictions CORS des flux éditeurs.
+      const rssJson=url=>"https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(url);
+      // Google Actualités limite déjà la recherche aux publications récentes ; le filtrage local ci-dessous impose aussi une fenêtre stricte de 24 h.
+      const googleNews=q=>"https://news.google.com/rss/search?q="+encodeURIComponent(q+" when:1d")+"&hl=fr&gl=FR&ceid=FR:fr";
+      const FRESHNESS_HOURS=24;
+      // Desvres is the confirmed home area; fallback if browser location is blocked.
+      let nearbyLabel="Desvres", nearbyDepartment="Pas-de-Calais", nearbyRegion="Hauts-de-France";
+      const tainFeeds=[
+        {url:googleNews('"Tain-l\'Hermitage" OR "Tain l\'Hermitage"'),label:"TAIN-L’Hermitage"},
+        {url:googleNews('"Tournon-sur-Rhône" OR "Tournon sur Rhône"'),label:"TOURNON-SUR-RHÔNE"},
+        {url:googleNews('"Drôme" actualités locales'),label:"DRÔME"},
+        {url:googleNews('"Ardèche" actualités locales'),label:"ARDÈCHE"},
+        {url:googleNews('"Auvergne-Rhône-Alpes" actualités'),label:"AUVERGNE-RHÔNE-ALPES"}
+      ];
+      function cleanText(value){const d=document.createElement("div");d.innerHTML=value||"";return (d.textContent||"").replace(/\s+/g," ").trim();}
+      function parseFeed(xml,label){
+        const doc=new DOMParser().parseFromString(xml,"text/xml");
+        if(doc.querySelector("parsererror")) return [];
+        return [...doc.querySelectorAll("item, entry")].map(item=>{
+          const title=cleanText(item.querySelector("title")?.textContent);
+          const linkNode=item.querySelector("link");
+          const link=linkNode?.getAttribute("href")||linkNode?.textContent||"";
+          const dateText=item.querySelector("pubDate, published, updated, date")?.textContent||"";
+          const date=dateText?new Date(dateText):null;
+          const media=[...item.getElementsByTagName("*")].find(el=>["thumbnail","content","enclosure"].includes((el.localName||"").toLowerCase()));
+          const image=media?.getAttribute("url")||"";
+          return {title,link:link.trim(),date,label,image};
+        }).filter(x=>x.title && /^https?:\/\//i.test(x.link));
+      }
+      async function getFeed(feed){
+        const response=await fetch(rssJson(feed.url),{cache:"no-store"});
+        if(!response.ok) throw new Error("Flux indisponible");
+        const data=await response.json();
+        if(data.status!=="ok" || !Array.isArray(data.items)) throw new Error(data.message||"Flux RSS indisponible");
+        return data.items.map(item=>{
+          const htmlContent=item.content||item.description||"";
+          const embeddedImage=htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i)?.[1]||"";
+          const mediaUrl=item.enclosure?.link||item.enclosure?.url||item["media:content"]?.url||"";
+          const image=item.thumbnail||mediaUrl||embeddedImage||"";
+          const date=item.pubDate?new Date(item.pubDate):null;
+          return {title:cleanText(item.title),link:item.link||"",date,label:feed.label,image};
+        }).filter(item=>item.title && /^https?:\/\//i.test(item.link));
+      }
+      let carouselItems=[], carouselIndex=0, carouselTimer=null;
+      async function resolveArticleImage(item){
+        if(item.image && /^https?:\/\//i.test(item.image)) return item;
+        try{
+          const response=await fetch("https://api.microlink.io/?url="+encodeURIComponent(item.link),{cache:"no-store"});
+          if(response.ok){
+            const payload=await response.json();
+            const image=payload?.data?.image?.url||"";
+            if(/^https?:\/\//i.test(image)) item.image=image;
+          }
+        }catch(_){}
+        return item;
+      }
+      function makeNewsCard(item){
+        const card=document.createElement("article");card.className="regional-news-card news-card-enter";
+        const cardImage=item.image && /^https?:\/\//i.test(item.image) ? item.image : "";
+        if(cardImage) card.style.setProperty("--news-image",`url("${cardImage.replace(/["\\]/g,"")}"),linear-gradient(135deg,#777,#aaa)`);
+        else card.classList.add("news-no-photo");
+        const meta=document.createElement("div");meta.className="regional-news-meta";
+        const when=item.date&&!isNaN(item.date)?item.date.toLocaleString("fr-FR",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}):"DERNIÈRE PUBLICATION";
+        meta.textContent=item.label+" • "+when;
+        const title=document.createElement("h3");title.textContent=item.title;
+        const a=document.createElement("a");a.href=item.link;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Lire l’article ↗";
+        card.append(meta,title,a);return card;
+      }
+      function showCarouselPage(){
+        list.classList.add("news-changing");
+        window.setTimeout(()=>{
+          list.replaceChildren();
+          const visible=carouselItems.length>1?2:1;
+          for(let i=0;i<visible;i++){
+            const item=carouselItems[(carouselIndex+i)%carouselItems.length];
+            if(item) list.appendChild(makeNewsCard(item));
+          }
+          list.classList.remove("news-changing");
+        },260);
+      }
+      function render(items){
+        if(carouselTimer){clearInterval(carouselTimer);carouselTimer=null;}
+        list.replaceChildren();
+        if(!items.length){
+          const searches=mode==="nearby" && nearbyLabel
+            ? [`${nearbyLabel} actualités`,`${nearbyLabel} informations locales`]
+            : ['"Tain-l’Hermitage" actualités','"Tournon-sur-Rhône" actualités','Drôme Ardèche vallée du Rhône actualités'];
+          searches.forEach((query,index)=>{
+            const card=document.createElement("article");card.className="regional-news-card";
+            const meta=document.createElement("div");meta.className="regional-news-meta";meta.textContent=index===0?"ACTUALITÉS LOCALES":"À LA UNE • RECHERCHE EN DIRECT";
+            const title=document.createElement("h3");title.textContent=query.replaceAll('"',"");
+            const a=document.createElement("a");a.href="https://news.google.com/search?q="+encodeURIComponent(query)+"&hl=fr&gl=FR&ceid=FR:fr";a.target="_blank";a.rel="noopener noreferrer";a.textContent="Voir les dernières actualités ↗";
+            card.append(meta,title,a);list.appendChild(card);
+          });
+          return;
+        }
+        carouselItems=items.slice(0,12);
+        carouselIndex=0;
+        showCarouselPage();
+        if(carouselItems.length>2){
+          carouselTimer=setInterval(()=>{
+            carouselIndex=(carouselIndex+2)%carouselItems.length;
+            showCarouselPage();
+          },8000);
+        }
+      }
+      async function loadNews(){
+        if(busy)return;busy=true;status.textContent="Recherche des dernières publications…";
+        try{
+          let feeds=tainFeeds;
+          if(mode==="nearby"){
+            if(!nearbyLabel){nearbyLabel="Desvres";nearbyDepartment="Pas-de-Calais";nearbyRegion="Hauts-de-France";}
+            feeds=[
+              {url:googleNews('"'+nearbyLabel+'" actualités'),label:"AUTOUR DE "+nearbyLabel.toLocaleUpperCase("fr-FR")},
+              {url:googleNews('"'+nearbyLabel+'" informations locales'),label:"ACTUALITÉS LOCALES"},
+              {url:googleNews('"'+nearbyLabel+'" OR Samer OR Desvres OR Boulonnais OR Boulogne-sur-Mer'),label:"BOULONNAIS • COMMUNES VOISINES"},
+              {url:googleNews('"'+nearbyDepartment+'" OR "Pas-de-Calais" actualités'),label:"ACTUALITÉS DU PAS-DE-CALAIS"},
+              {url:googleNews('"'+nearbyRegion+'" OR "Hauts-de-France" actualités'),label:"ACTUALITÉS DES HAUTS-DE-FRANCE"},
+              ...(nearbyDepartment?[{url:googleNews('"'+nearbyDepartment+'" actualités'),label:"DÉPARTEMENT • "+nearbyDepartment.toLocaleUpperCase("fr-FR")}]:[]),
+              ...(nearbyRegion?[{url:googleNews('"'+nearbyRegion+'" actualités locales'),label:"RÉGION • "+nearbyRegion.toLocaleUpperCase("fr-FR")}]:[])
+            ];
+          }
+          const results=await Promise.allSettled(feeds.map(getFeed));
+          const items=results.filter(r=>r.status==="fulfilled").flatMap(r=>r.value);
+          const cutoff=Date.now()-FRESHNESS_HOURS*60*60*1000;
+          const fresh=items.filter(item=>item.date instanceof Date && !isNaN(item.date) && item.date.getTime()>=cutoff && item.date.getTime()<=Date.now()+5*60*1000);
+          const unique=[...new Map(fresh.map(x=>[x.link,x])).values()];
+          unique.sort((a,b)=>b.date.getTime()-a.date.getTime());
+          render(unique); // Affiche immédiatement les articles reçus du flux RSS.
+          // Complète ensuite les photos manquantes en arrière-plan, sans bloquer l'affichage.
+          Promise.all(unique.slice(0,12).map(resolveArticleImage)).then(()=>{
+            if(unique===carouselItems || carouselItems.some(item=>unique.some(x=>x.link===item.link))) render(unique);
+          });
+          const ok=results.filter(r=>r.status==="fulfilled").length;
+          status.textContent=ok && unique.length?`${unique.length} actualité(s) des dernières 24 h • ${mode==="tain"?"Tain-l’Hermitage, Tournon, Drôme et Ardèche":"secteur "+nearbyLabel+(nearbyRegion?" et "+nearbyRegion:"")}`:"Aucun article publié dans les dernières 24 h n’a été trouvé pour cette zone, ou les flux sont momentanément indisponibles.";
+          updated.textContent="Dernière vérification : "+new Date().toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"})+" • prochain contrôle dans 3 min";
+        }catch(e){render([]);status.textContent="Flux en direct indisponible pour le moment. Consulte les recherches locales ci-dessous.";}
+        finally{busy=false;}
+      }
+      function requestNearby(){
+        if(!navigator.geolocation){status.textContent="La géolocalisation n’est pas disponible sur cet appareil.";return;}
+        status.textContent="Demande d’autorisation de localisation…";
+        navigator.geolocation.getCurrentPosition(async position=>{
+          try{
+            const lat=position.coords.latitude, lon=position.coords.longitude;
+            let nearby="", department="", region="";
+            try{
+              const url="https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=10&accept-language=fr";
+              const r=await fetch(url,{headers:{"Accept":"application/json"},cache:"no-store"});
+              if(r.ok){
+                const data=await r.json(),a=data.address||{};
+                nearby=a.city||a.town||a.village||a.municipality||a.suburb||"";
+                department=a.county||a.state_district||"";
+                region=a.state||a.region||"";
+              }
+            }catch(_){}
+            if(!nearby || !department || !region){
+              try{
+                const url="https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fr";
+                const r=await fetch(url,{cache:"no-store"});
+                if(r.ok){
+                  const data=await r.json(),admin=data.localityInfo?.administrative||[];
+                  nearby=nearby||data.city||data.locality||"";
+                  department=department||admin.find(x=>/department|département/i.test((x.description||"")+" "+(x.name||"")))?.name||"";
+                  region=region||data.principalSubdivision||"";
+                }
+              }catch(_){}
+            }
+            nearbyLabel=nearby||"Desvres";
+            nearbyDepartment=department||"Pas-de-Calais";
+            nearbyRegion=region||"Hauts-de-France";
+            await loadNews();
+          }catch(e){status.textContent="Votre position a été détectée, mais le nom de votre secteur n’a pas pu être déterminé. Réessayez.";}
+        },error=>{
+          nearbyLabel="Desvres";nearbyDepartment="Pas-de-Calais";nearbyRegion="Hauts-de-France";
+          status.textContent="Localisation non accessible : actualités de Desvres, du Pas-de-Calais et des Hauts-de-France.";
+          loadNews();
+        },{enableHighAccuracy:false,timeout:12000,maximumAge:300000});
+      }
+      tabs.forEach(tab=>tab.addEventListener("click",()=>{
+        mode=tab.dataset.newsMode;tabs.forEach(t=>t.classList.toggle("active",t===tab));
+        if(mode==="nearby") requestNearby(); else loadNews();
+      }));
+      refresh?.addEventListener("click",loadNews);
+      window.loadRegionalNewsNow=()=>{if(!busy) loadNews();};
+      render([]);
+      status.textContent="Recherche des articles publiés au cours des dernières 24 heures uniquement…";
+      loadNews();setInterval(loadNews,180000);
+    })();
+  </script>
+<script>
+(() => {
+  const weatherText = code => {
+    const map = {0:["☀️","Ciel dégagé"],1:["🌤️","Principalement dégagé"],2:["⛅","Partiellement nuageux"],3:["☁️","Couvert"],45:["🌫️","Brouillard"],48:["🌫️","Brouillard givrant"],51:["🌦️","Bruine légère"],53:["🌦️","Bruine"],55:["🌧️","Bruine forte"],56:["🌧️","Bruine verglaçante"],57:["🌧️","Bruine verglaçante forte"],61:["🌦️","Pluie faible"],63:["🌧️","Pluie modérée"],65:["🌧️","Forte pluie"],66:["🌧️","Pluie verglaçante"],67:["🌧️","Forte pluie verglaçante"],71:["🌨️","Neige faible"],73:["❄️","Neige modérée"],75:["❄️","Forte neige"],77:["🌨️","Grains de neige"],80:["🌦️","Averses faibles"],81:["🌧️","Averses"],82:["⛈️","Fortes averses"],85:["🌨️","Averses de neige"],86:["❄️","Fortes averses de neige"],95:["⛈️","Orage"],96:["⛈️","Orage et grêle"],99:["⛈️","Orage et forte grêle"]};
+    return map[code] || ["🌡️","Conditions météo"];
+  };
+  const urlMeteo = (lat,lon) => {
+    const params = new URLSearchParams({latitude:lat,longitude:lon,current:"temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m",hourly:"temperature_2m,apparent_temperature,precipitation_probability,weather_code",daily:"weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",forecast_days:"7",timezone:"auto"});
+    return `https://api.open-meteo.com/v1/forecast?${params}`;
+  };
+  async function chargerMeteo(lat,lon,containerId,daysId,updatedId) {
+    const res = await fetch(urlMeteo(lat,lon),{cache:"no-store"});
+    if (!res.ok) throw new Error("Service météo momentanément indisponible");
+    const data = await res.json(), c=data.current, d=data.daily, [icon,desc]=weatherText(c.weather_code);
+    const container=document.getElementById(containerId);
+    if(container) container.innerHTML=`<div class="weather-main"><div class="weather-icon">${icon}</div><div><div class="weather-temp">${Math.round(c.temperature_2m)}°C</div><div class="weather-desc">${desc}</div></div></div><div class="weather-details"><span>🌡️ Ressenti ${Math.round(c.apparent_temperature)}°C</span><span>💧 Humidité ${c.relative_humidity_2m}%</span><span>💨 Vent ${Math.round(c.wind_speed_10m)} km/h</span><span>🌧️ Pluie ${c.precipitation} mm</span></div>`;
+    const days=document.getElementById(daysId);
+    if(days) {
+      const hourly=data.hourly||{}, times=hourly.time||[];
+      const nowLocal=c.time || new Date().toISOString();
+      const today=nowLocal.slice(0,10);
+      const currentHour=nowLocal.slice(0,13)+":00";
+      const periodDefs=[["Matin",6,12],["Après-midi",12,18],["Soir",18,24],["Nuit",0,6]];
+      const periodHtml=(date,period,start,end)=>{
+        const ids=times.map((t,i)=>({t,i})).filter(x=>x.t.startsWith(date+"T")&&Number(x.t.slice(11,13))>=start&&Number(x.t.slice(11,13))<end).map(x=>x.i);
+        if(!ids.length)return `<span class="weather-period"><b>${period}</b> —</span>`;
+        const temps=ids.map(i=>hourly.temperature_2m[i]).filter(Number.isFinite);
+        const idx=ids[Math.floor(ids.length/2)], [ic,desc]=weatherText(hourly.weather_code[idx]);
+        const rain=Math.max(...ids.map(i=>hourly.precipitation_probability[i]||0));
+        return `<span class="weather-period"><b>${period}</b> ${ic} ${Math.round(Math.min(...temps))}–${Math.round(Math.max(...temps))}° <small>${rain}% pluie · ${desc}</small></span>`;
+      };
+      days.innerHTML=d.time.map((date,i)=>{
+        const [ico,label]=weatherText(d.weather_code[i]);
+        const day=new Intl.DateTimeFormat("fr-FR",{weekday:"long",day:"numeric",month:"short",timeZone:"Europe/Paris"}).format(new Date(date+"T12:00:00"));
+        const periods=periodDefs.map(([name,start,end])=>periodHtml(date,name,start,end)).join("");
+        const todayHours=date===today?`<div class="weather-hourly"><b>Prévisions heure par heure — aujourd’hui</b><div class="weather-hourly-list">${times.map((t,k)=>({t,k})).filter(x=>x.t.startsWith(date+"T")&&(date!==today||x.t>=currentHour)).map(({t,k})=>{const [hi]=weatherText(hourly.weather_code[k]);return `<span class="weather-hour"><b>${t.slice(11,16)}</b>${hi}<strong>${Math.round(hourly.temperature_2m[k])}°</strong><small>${hourly.precipitation_probability[k]||0}%</small></span>`}).join("")}</div></div>`:"";
+        return `<details class="weather-day-detail" ${i===0?"open":""}><summary><span>${day}</span><span>${ico} <b>${Math.round(d.temperature_2m_max[i])}° / ${Math.round(d.temperature_2m_min[i])}°</b> · ${d.precipitation_probability_max[i]??0}% pluie</span></summary><div class="weather-periods">${periods}</div>${todayHours}</details>`;
+      }).join("");
+    }
+    if(updatedId){const el=document.getElementById(updatedId);if(el)el.textContent=`Mis à jour à ${new Intl.DateTimeFormat("fr-FR",{hour:"2-digit",minute:"2-digit"}).format(new Date())}`;}
+    return data;
+  }
+  async function chargerRegion() {
+    const cities=[["Vienne",45.525,4.874],["Valence",44.933,4.892],["Avignon",43.949,4.805]];
+    const box=document.getElementById("weatherRhône"); if(!box)return;
+    const results=await Promise.all(cities.map(async ([name,lat,lon])=>{try{const r=await fetch(urlMeteo(lat,lon),{cache:"no-store"});const d=await r.json();return {name,temp:Math.round(d.current.temperature_2m),code:d.current.weather_code};}catch(_){return {name,error:true};}}));
+    box.innerHTML=results.map(c=>{const [ico,label]=weatherText(c.code);return `<div class="weather-region-city"><b>${c.name}</b><span>${c.error?"—":ico+" "+c.temp+"°"}</span><small>${c.error?"Indisponible":label}</small></div>`;}).join("");
+  }
+  let localisationEnCours=false;
+  async function nommerVille(lat,lon){
+    const controllers=[];
+    const services=[
+      async()=>{
+        const r=await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${encodeURIComponent(lat)}&longitude=${encodeURIComponent(lon)}&localityLanguage=fr`,{cache:"no-store"});
+        if(!r.ok)throw new Error("Géocodage indisponible");
+        const d=await r.json(),a=d.localityInfo?.administrative||[];
+        return d.city||d.locality||d.principalSubdivision||a.find(x=>/commune|city|town|village/i.test((x.description||"")+" "+(x.name||"")))?.name||"";
+      },
+      async()=>{
+        const r=await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${encodeURIComponent(lat)}&lon=${encodeURIComponent(lon)}&zoom=10&accept-language=fr`,{headers:{"Accept":"application/json"},cache:"no-store"});
+        if(!r.ok)throw new Error("Géocodage indisponible");
+        const d=await r.json(),a=d.address||{};
+        return a.city||a.town||a.village||a.municipality||a.suburb||a.hamlet||a.county||"";
+      }
+    ];
+    for(const service of services){try{const name=await service();if(name)return name;}catch(_){}}
+    return "";
+  }
+  function demanderPosition(options){
+    return new Promise((resolve,reject)=>navigator.geolocation.getCurrentPosition(resolve,reject,options));
+  }
+  async function localiserEtCharger() {
+    const status=document.getElementById("weatherLocalStatus");
+    const bouton=document.getElementById("weatherLocateButton");
+    const cityEl=document.getElementById("weatherLocalCity");
+    if(localisationEnCours)return;
+    if(!navigator.geolocation){
+      if(status)status.textContent="Ce navigateur ne fournit pas la géolocalisation.";
+      return;
+    }
+    if(!window.isSecureContext && location.hostname!=="localhost"){
+      if(status)status.textContent="La géolocalisation nécessite l'adresse HTTPS du site. Ouvrez la version publiée en https://.";
+      return;
+    }
+    localisationEnCours=true;
+    if(bouton){bouton.disabled=true;bouton.textContent="📍 Recherche GPS…";}
+    if(status)status.textContent="Recherche de votre position GPS. Gardez la page ouverte quelques secondes…";
+    try{
+      let pos;
+      try{
+        pos=await demanderPosition({enableHighAccuracy:true,timeout:25000,maximumAge:0});
+      }catch(firstError){
+        // Certains téléphones ne fournissent pas de position GPS précise ;
+        // on retente avec la localisation réseau/Wi-Fi.
+        if(firstError.code===1)throw firstError;
+        if(status)status.textContent="GPS précis indisponible, nouvelle tentative avec le réseau mobile/Wi-Fi…";
+        pos=await demanderPosition({enableHighAccuracy:false,timeout:25000,maximumAge:60000});
+      }
+      const lat=pos.coords.latitude,lon=pos.coords.longitude;
+      if(!Number.isFinite(lat)||!Number.isFinite(lon))throw new Error("Coordonnées GPS invalides");
+      if(cityEl)cityEl.textContent=`📍 Position détectée (${lat.toFixed(3)}, ${lon.toFixed(3)}) — recherche de la ville…`;
+      if(status)status.textContent="Position reçue. Chargement de la météo locale…";
+      // La météo se charge avec les coordonnées même si le service de nommage de ville est indisponible.
+      await chargerMeteo(lat,lon,"weatherLocal","weatherLocalDays");
+      if(status)status.textContent="Météo actualisée depuis la position actuelle de votre téléphone.";
+      if(bouton)bouton.textContent="📍 Actualiser ma météo locale";
+      const ville=await nommerVille(lat,lon);
+      if(cityEl)cityEl.textContent=ville?`📍 ${ville}`:`📍 Votre position actuelle (${lat.toFixed(3)}, ${lon.toFixed(3)})`;
+    }catch(err){
+      const code=err&&typeof err.code==="number"?err.code:0;
+      if(status){
+        status.textContent=code===1
+          ?"Le téléphone ou le navigateur a refusé la position. Vérifiez l'autorisation de localisation pour le navigateur ET pour le site, puis réessayez."
+          :code===2
+          ?"Le téléphone n'a pas fourni de position. Activez Localisation/GPS, désactivez le mode économie d'énergie si nécessaire, puis réessayez."
+          :code===3
+          ?"Le téléphone n'a pas répondu à temps. Essayez près d'une fenêtre, avec le Wi-Fi ou les données mobiles activés."
+          :"La météo locale n'a pas pu être chargée. Vérifiez la connexion Internet et réessayez.";
+      }
+      if(cityEl)cityEl.textContent="📍 Position non détectée";
+      const local=document.getElementById("weatherLocal");
+      if(local)local.innerHTML='<div class="weather-main"><div class="weather-icon">📍</div><div><div class="weather-desc">Appuyez sur le bouton pour relancer la détection de votre position.</div></div></div>';
+      if(bouton)bouton.textContent="📍 Réessayer la localisation";
+    }finally{
+      localisationEnCours=false;
+      if(bouton)bouton.disabled=false;
+    }
+  }
+  async function chargerMeteoVilleSaisie(){
+    const input=document.getElementById("weatherCityInput");
+    const status=document.getElementById("weatherLocalStatus");
+    const cityEl=document.getElementById("weatherLocalCity");
+    const button=document.getElementById("weatherCityButton");
+    const ville=(input?.value||"").trim();
+    if(!ville){if(status)status.textContent="Saisissez le nom d’une ville pour afficher sa météo.";return;}
+    if(button){button.disabled=true;button.textContent="Recherche…";}
+    if(status)status.textContent="Recherche de "+ville+"…";
+    try{
+      const url="https://geocoding-api.open-meteo.com/v1/search?name="+encodeURIComponent(ville)+"&count=1&language=fr&format=json";
+      const response=await fetch(url,{cache:"no-store"});
+      if(!response.ok)throw new Error("Recherche de ville indisponible");
+      const data=await response.json(),place=data.results?.[0];
+      if(!place)throw new Error("Ville introuvable. Vérifiez l’orthographe et réessayez.");
+      await chargerMeteo(place.latitude,place.longitude,"weatherLocal","weatherLocalDays");
+      if(cityEl)cityEl.textContent="📍 "+[place.name,place.admin1,place.country].filter(Boolean).join(", ");
+      if(status)status.textContent="Météo chargée pour la ville choisie.";
+    }catch(error){
+      if(status)status.textContent=error.message||"Impossible de trouver cette ville. Réessayez.";
+    }finally{
+      if(button){button.disabled=false;button.textContent="Voir la météo";}
+    }
+  }
+  function initWeather(){
+    chargerMeteo(45.069,4.837,"weatherTain","weatherTainDays","weatherTainUpdated").catch(()=>{
+      const el=document.getElementById("weatherTain");if(el)el.innerHTML='<div class="weather-desc">Météo temporairement indisponible.</div>';
+    });
+    chargerRegion().catch(()=>{});
+    const bouton=document.getElementById("weatherLocateButton");
+    // Sur mobile, demander la position après un appui explicite est plus fiable :
+    // le navigateur peut alors afficher sa demande d'autorisation.
+    if(bouton) bouton.addEventListener("click",localiserEtCharger);
+    const cityButton=document.getElementById("weatherCityButton");
+    const cityInput=document.getElementById("weatherCityInput");
+    if(cityButton)cityButton.addEventListener("click",chargerMeteoVilleSaisie);
+    if(cityInput)cityInput.addEventListener("keydown",event=>{if(event.key==="Enter")chargerMeteoVilleSaisie();});
+    const status=document.getElementById("weatherLocalStatus");
+    const city=document.getElementById("weatherLocalCity");
+    if(!window.isSecureContext && location.hostname!=="localhost"){
+      if(status)status.textContent="Ouvrez le site avec son adresse HTTPS, puis appuyez sur « Activer ma localisation ».";
+      if(city)city.textContent="📍 En attente de l’autorisation sur le site sécurisé";
+    }else{
+      if(status)status.textContent="Appuyez sur le bouton pour obtenir la position actuelle du téléphone. Le GPS précis puis le réseau mobile/Wi-Fi seront essayés.";
+      if(city)city.textContent="📍 En attente de votre position actuelle";
+    }
+    setInterval(()=>{chargerMeteo(45.069,4.837,"weatherTain","weatherTainDays","weatherTainUpdated").catch(()=>{});chargerRegion().catch(()=>{});},15*60*1000);
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initWeather);else initWeather();
+})();
+</script>
+</body>
+</html>
