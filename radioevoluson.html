@@ -778,10 +778,10 @@ body:has(.history-card){
     .radio-votes-refresh{font-size:12px;color:#777}
     .radio-votes-columns{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
     .radio-votes-ranking h3,.radio-votes-history h3{margin:0 0 12px;color:#3b1015;font-size:18px}
-    #radioVotesTop10{list-style:none;padding:0;margin:0;counter-reset:vote-rank}
-    #radioVotesTop10 li{counter-increment:vote-rank;display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid #f0e3e3;background:#fff}
-    #radioVotesTop10 li:nth-child(odd){background:#fff7f7}
-    #radioVotesTop10 li:before{content:counter(vote-rank);font-weight:900;color:#d00012}
+    #radioVotesTop20{list-style:none;padding:0;margin:0;counter-reset:vote-rank}
+    #radioVotesTop20 li{counter-increment:vote-rank;display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:center;padding:11px 12px;border-bottom:1px solid #f0e3e3;background:#fff}
+    #radioVotesTop20 li:nth-child(odd){background:#fff7f7}
+    #radioVotesTop20 li:before{content:counter(vote-rank);font-weight:900;color:#d00012}
     .radio-vote-title{font-weight:750;color:#241316;overflow-wrap:anywhere}
     .radio-vote-count{font-weight:850;white-space:nowrap;color:#d00012}
     .radio-votes-empty{color:#777;padding:12px!important}
@@ -790,7 +790,7 @@ body:has(.history-card){
     .radio-vote-week{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:9px;background:#fff4f4}
     .radio-vote-week strong{white-space:nowrap}
     .radio-votes-history small{color:#777;line-height:1.5}
-    @media(max-width:700px){.radio-votes-panel{margin:16px 12px;padding:16px}.radio-votes-heading{display:block}.radio-votes-refresh{display:block;margin-top:8px}.radio-votes-columns{grid-template-columns:1fr;gap:20px}#radioVotesTop10 li{padding:10px 8px}}
+    @media(max-width:700px){.radio-votes-panel{margin:16px 12px;padding:16px}.radio-votes-heading{display:block}.radio-votes-refresh{display:block;margin-top:8px}.radio-votes-columns{grid-template-columns:1fr;gap:20px}#radioVotesTop20 li{padding:10px 8px}}
     /* Rapprocher le bloc titre/artiste de la pochette sans modifier son alignement vertical */
     .playerbar .player-inner{column-gap:0!important}
     .playerbar .cover-vote-stack{flex:0 0 76px!important;width:76px!important;margin-right:0!important}
@@ -1445,7 +1445,7 @@ body:has(.history-card){
         <div>
           <div class="radio-kicker">La communauté Evoluson</div>
           <h1>🏆 Votes des <span>auditeurs</span></h1>
-          <p>Retrouvez le Top 10 de la semaine et l’historique des votes.</p>
+          <p>Retrouvez le Top 20 de la semaine et l’historique des votes.</p>
         </div>
         <div class="radio-hero-mark" aria-hidden="true">♥</div>
       </div>
@@ -1461,8 +1461,8 @@ body:has(.history-card){
       </div>
       <div class="radio-votes-columns">
         <div class="radio-votes-ranking">
-          <h3>Top 10 de la semaine</h3>
-          <ol id="radioVotesTop10"><li class="radio-votes-empty">Chargement des votes…</li></ol>
+          <h3>Top 20 de la semaine</h3>
+          <ol id="radioVotesTop20"><li class="radio-votes-empty">Chargement des votes…</li></ol>
         </div>
         <div class="radio-votes-history">
           <h3>Historique des votes</h3>
@@ -1676,7 +1676,7 @@ body:has(.history-card){
       actualiser();
       setInterval(actualiser,1000);
     })();
-    const VOTE_API_BASE = window.location.origin;
+    const VOTE_API_BASE = "https://radioevoluson.kdns.fr";
     // Agenda local alimenté par les agendas officiels via l’API du bot.
     (function(){
       const container=document.getElementById("localAgendaEvents");
@@ -1870,8 +1870,8 @@ body:has(.history-card){
     function renderRadioVotes(snapshot){
       const rows=(snapshot.hebdomadaire||[]).map(normalizeVoteItem)
         .filter(item=>item.title&&(item.up>0||item.down>0))
-        .sort((a,b)=>b.score-a.score||b.up-a.up).slice(0,10);
-      const list=document.getElementById("radioVotesTop10");
+        .sort((a,b)=>b.score-a.score||b.up-a.up).slice(0,20);
+      const list=document.getElementById("radioVotesTop20");
       if(list)list.innerHTML=rows.length?rows.map(item=>`<li><span class="radio-vote-title">${escapeHtml(item.title)}</span><span class="radio-vote-count">👍 ${item.up} · 👎 ${item.down}</span></li>`).join(""):'<li class="radio-votes-empty">Aucun vote enregistré cette semaine.</li>';
       const total=(snapshot.titres||[]).reduce((sum,item)=>sum+Number(item.hebdomadaire?.up||0)+Number(item.hebdomadaire?.down||0),0);
       const totalEl=document.getElementById("radioVotesTotal");
